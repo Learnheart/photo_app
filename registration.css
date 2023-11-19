@@ -1,0 +1,19 @@
+body {
+  padding: 50px;
+}
+h1 {
+  text-align: center;
+}
+.container {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 50px;
+}
+.form-control {
+  margin: 24px 0px;
+}
+/* .alert {
+  top: 260px;
+  color: red;
+  padding: 0 auto;
+} */
