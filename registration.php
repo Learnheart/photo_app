@@ -14,13 +14,45 @@ if (isset($_SESSION["user"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link rel="stylesheet" href="./registration.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="registration.css">
+  <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 
 <body>
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo-container">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5ALKIjY20IpJivXO-ro-GFMZWyYpXP42SwsBF33yp877ot0N4yo7V4_Uhy9okV0aKso&usqp=CAU"
+        alt="" class="logo">
+    </div>
+    <div class="icon">
+      <i class="ti-home"></i>
+    </div>
+    <div class="icon">
+      <i class="ti-bookmark"></i>
+    </div>
+  </div>
+  <!-- Nav bar right -->
+  <div class="navbar right">
+    <div class="logo-container">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5ALKIjY20IpJivXO-ro-GFMZWyYpXP42SwsBF33yp877ot0N4yo7V4_Uhy9okV0aKso&usqp=CAU"
+        alt="" class="logo">
+    </div>
+    <div class="icon">
+      <i class="ti-home"></i>
+    </div>
+    <div class="icon">
+      <i class="ti-bookmark"></i>
+    </div>
+  </div>
 
+  <!-- Content -->
   <h1>Sign Up</h1>
+  <hr>
   <div class="container">
     <!-- print: what variable have currently? -->
     <?php
@@ -85,14 +117,13 @@ if (isset($_SESSION["user"])) {
     }
     ?>
     <form action="registration.php" method="post">
-      <div class="form-group">
+      <div class="input-group">
         <input type="text" class="form-control" name="firstName" placeholder="First Name">
-      </div>
-      <div class="form-group">
+        <span></span>
         <input type="text" class="form-control" name="lastName" placeholder="Last Name">
       </div>
       <div class="form-group">
-        <input type="email" class="form-control" name="email" placeholder="Email address">
+        <input type="email" class="form-control mt-0" name="email" placeholder="Email address">
       </div>
       <div class="form-group">
         <input type="password" class="form-control" name="password" placeholder="Password">
@@ -100,14 +131,19 @@ if (isset($_SESSION["user"])) {
       <div class="form-group">
         <input type="password" class="form-control" name="confirmPassword" placeholder="Confirm Password">
       </div>
+      <div>
+        <input type="checkbox" name="privacy" id="privacy" required>
+        <label for="privacy">I agree to term of <a href="#">service and privacy</a></label>
+      </div>
       <div class="form-btn">
         <input type="submit" class="btn btn-primary" value="Create Account" name="submit">
       </div>
     </form>
     <div>
-      <div>
+      <div class="move-to-login">
         <p>Already Registered <a href="login.php">Login Here</a></p>
       </div>
+      <hr>
     </div>
   </div>
 </body>
