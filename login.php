@@ -10,8 +10,15 @@ if (isset($_SESSION["user"])) {
 <?php
 if (isset($_POST["login"])) {
   include "database.php";
-  $email = $_POST["email"];
-  $password = $_POST["password"];
+  // $email = $_POST["email"];
+  // $password = $_POST["password"];
+  // $role = $_POST["role"];
+  // Sanitize user inputs
+  $email = mysqli_real_escape_string($conn, $_POST["email"]);
+  $password = mysqli_real_escape_string($conn, $_POST["password"]);
+  $role = mysqli_real_escape_string($conn, $_POST["role"]);
+
+
   // var_dump($password);
   $sql = "SELECT * FROM account WHERE email = '$email'";
   $result = mysqli_query($conn, $sql);
@@ -25,10 +32,26 @@ if (isset($_POST["login"])) {
     $storedPasswordHash = $user["password"];
     if (password_verify($password, $storedPasswordHash)) {
       // allow only this user login
-      session_start();
-      $_SESSION["user"] = "yes"; //if user have some value -> access
-      header("Location: homepage.php");
-      die();
+      // session_start();
+      // Set user information in the session
+      // $_SESSION["user"] = "yes";
+      $_SESSION["user"] = $user["userId"];
+      $_SESSION["role"] = $user["role"];
+
+      // Redirect based on user role
+      if ($_SESSION["role"] == "User") {
+        header("Location: homepage.php");
+      } elseif ($_SESSION["role"] == "Admin") {
+        header("Location: admin-site.php");
+      } else {
+        // Handle other roles as needed
+        echo "<div class='alert alert-danger'>Invalid role</div>";
+      }
+      exit();
+      // $_SESSION["user"] = "yes"; //if user have some value -> access
+      // header("Location: homepage.php");
+      // die();
+
     } else {
       echo "<div class='alert alert-danger'>Password does not match</div>";
     }
@@ -45,8 +68,7 @@ if (isset($_POST["login"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="registration.css">
 </head>
 

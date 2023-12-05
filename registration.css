@@ -16,10 +16,6 @@ body {
   justify-content: space-between;
   z-index: 1;
 }
-.navbar.right {
-  left: auto;
-  right: 0;
-}
 
 .logo-container {
   text-align: center;
@@ -44,7 +40,7 @@ h1 {
   text-align: center;
   font-weight: bold;
   font-size: 50px;
-  color: #3366cc;
+  color: #136fb8;
 }
 hr {
   width: 50%;
@@ -59,17 +55,17 @@ hr {
   margin: 24px 0px;
   border-radius: 8px;
   padding: 10px 15px;
-  border: solid 2px #3366cc;
+  border: solid 2px #136fb8;
 }
 
-/* .input-group
+.input-group
   > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
     .valid-feedback
   ):not(.invalid-tooltip):not(.invalid-feedback) {
   margin-left: calc(var(--bs-border-width) * -1);
-  border-top-left-radius: 0;
-  border-bottom-left-radius: 0;
-} */
+  border-top-left-radius: 3;
+  border-bottom-left-radius: 3;
+}
 .input-group span {
   margin: 0 70px;
 }
@@ -77,10 +73,15 @@ hr {
   text-align: center;
 }
 .btn {
+  background-color: #136fb8;
   padding: 15px 20px;
   font-size: xx-large;
   border-radius: 25px;
   width: 60%;
   text-align: center;
   margin: 0 auto;
+}
+
+.move-to-login {
+  text-align: center;
 }

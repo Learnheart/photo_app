@@ -35,23 +35,8 @@ if (isset($_SESSION["user"])) {
       <i class="ti-bookmark"></i>
     </div>
   </div>
-  <!-- Nav bar right -->
-  <div class="navbar right">
-    <div class="logo-container">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5ALKIjY20IpJivXO-ro-GFMZWyYpXP42SwsBF33yp877ot0N4yo7V4_Uhy9okV0aKso&usqp=CAU"
-        alt="" class="logo">
-    </div>
-    <div class="icon">
-      <i class="ti-home"></i>
-    </div>
-    <div class="icon">
-      <i class="ti-bookmark"></i>
-    </div>
-  </div>
-
   <!-- Content -->
-  <h1>Sign Up</h1>
+  <h1 class="mt-5">Sign Up</h1>
   <hr>
   <div class="container">
     <!-- print: what variable have currently? -->
@@ -140,7 +125,7 @@ if (isset($_SESSION["user"])) {
       </div>
     </form>
     <div>
-      <div class="move-to-login">
+      <div class="move-to-login mt-3">
         <p>Already Registered <a href="login.php">Login Here</a></p>
       </div>
       <hr>
