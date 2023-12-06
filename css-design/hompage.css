@@ -1,0 +1,102 @@
+/* Include the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+
+#homepage {
+  margin: 0 24px 0 124px;
+}
+/* Side bar design */
+#side-bar {
+  height: 100vh;
+  width: 100px;
+  background-color: #333; /* Adjust the background color as needed */
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 80px; /* Adjust the width of your logo */
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  transform: translateY(-230%);
+  margin: 0;
+}
+.icon {
+  color: aliceblue;
+}
+
+/* Search key */
+.input-group {
+  border-radius: 25px;
+  border: 1px solid #e4e9f2;
+}
+.form-control {
+  color: #8f9bb3;
+  font-family: Akaya Kanadaka;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.d-flex {
+  width: 770px;
+}
+/* User info */
+.user-info {
+  display: inline;
+  text-align: center;
+}
+.container-fluid {
+  justify-content: unset !important;
+  align-items: center;
+}
+h2 {
+  margin-left: 68px;
+  width: auto;
+  height: 38px;
+  flex-shrink: 0;
+
+  color: #000;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+.bell-icon,
+.export-icon {
+  display: flex;
+  width: 52.66px;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e4e9f2;
+  border-radius: 50%;
+  margin-left: 19px;
+  cursor: pointer;
+}
+.ti-bell,
+.ti-export {
+  font-size: 20px;
+  color: #2e4b9c;
+}
+.export-icon {
+  background-color: #2e4b9c;
+}
+.ti-export {
+  color: white;
+}

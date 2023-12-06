@@ -24,9 +24,7 @@ if (isset($_SESSION["user"])) {
   <!-- Navbar -->
   <div class="navbar">
     <div class="logo-container">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5ALKIjY20IpJivXO-ro-GFMZWyYpXP42SwsBF33yp877ot0N4yo7V4_Uhy9okV0aKso&usqp=CAU"
-        alt="" class="logo">
+      <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
     <div class="icon">
       <i class="ti-home"></i>
