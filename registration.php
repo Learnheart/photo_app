@@ -92,6 +92,12 @@ if (isset($_SESSION["user"])) {
           // bind value into sql cmd
           mysqli_stmt_bind_param($init, "ssss", $firstName, $lastName, $email, $password_hash);
           mysqli_stmt_execute($init);
+          // set session 
+          $_SESSION["user"] = $user["userId"];
+          $_SESSION["role"] = $user["role"];
+          $_SESSION["firstName"] = $user["firstName"];
+          $_SESSION["lastName"] = $user["lastName"];
+
           header("Location: login.php");
         } else {
           die("Something went wrong");

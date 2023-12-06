@@ -82,11 +82,12 @@ h2 {
   display: flex;
   width: 52.66px;
   height: 60px;
+  top: 43px;
   align-items: center;
   justify-content: center;
   border: 1px solid #e4e9f2;
   border-radius: 50%;
-  margin-left: 19px;
+  left: 1115px;
   cursor: pointer;
 }
 .ti-bell,

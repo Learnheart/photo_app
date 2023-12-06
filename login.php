@@ -1,5 +1,6 @@
 <!-- If user is already logged in -> move directly -->
 <?php
+error_reporting(E_ERROR | E_PARSE);
 session_start();
 // Check authorize 
 if (isset($_SESSION["user"])) {
@@ -40,7 +41,6 @@ if (isset($_SESSION["user"])) {
   <div class="container">
     <?php
     if (isset($_POST["login"])) {
-      error_reporting(E_ERROR | E_PARSE);
       include "database.php";
       // $email = $_POST["email"];
       // $password = $_POST["password"];
@@ -57,8 +57,8 @@ if (isset($_SESSION["user"])) {
       $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
       // Debugging statements
-      // echo "Entered Password: " . $password . "<br>";
-      // echo "Stored Password Hash: " . $user["password"] . "<br>";
+      echo "Entered Password: " . $password . "<br>";
+      echo "Stored Password Hash: " . $user["password"] . "<br>";
 
       if ($user) {
         $storedPasswordHash = $user["password"];
@@ -68,6 +68,9 @@ if (isset($_SESSION["user"])) {
 
           // Set user information in the session
           $_SESSION["user"] = $user["userId"];
+          $_SESSION["firstName"] = $user["firstName"];
+          $_SESSION["lastName"] = $user["lastName"];
+          $_SESSION["email"] = $user["email"];
 
           // Check if the 'role' key exists in the $user array
           if (isset($user["role"])) {
@@ -94,6 +97,7 @@ if (isset($_SESSION["user"])) {
         echo "<div class='alert alert-danger'>Email does not match</div>";
       }
     }
+
     ?>
     <form action="login.php" method="POST">
       <div class="form-group">
