@@ -27,9 +27,7 @@ if (isset($_SESSION["user"])) {
       <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
     <div class="icon">
-      <i class="ti-home"></i>
-    </div>
-    <div class="icon">
+      <i class="ti-home"></i></br>
       <i class="ti-bookmark"></i>
     </div>
   </div>
