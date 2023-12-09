@@ -34,19 +34,47 @@
   transform: translateY(-230%);
   margin: 0;
 }
+
 .icon {
-  color: aliceblue;
+  color: rgb(208, 212, 214);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0.7em 0;
+  float: left;
+  position: relative;
+  list-style: none;
+
 }
+li {
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+hr {
+  width: 50%;
+  margin-bottom:30px ;
+}
+
+
+/* Other styles... */
 
 /* Search key */
 .input-group {
-  border-radius: 25px;
+  border-radius: 15px;
   border: 1px solid #e4e9f2;
+  margin-left:20px;
+}
+.input-group-text{
+  border-radius: 15px;
+  font-size: 20px;
+  background-color: white;
 }
 .form-control {
+  border-radius: 15px;
   color: #8f9bb3;
   font-family: Akaya Kanadaka;
-  font-size: 20px;
+  font-size: 25px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -62,7 +90,10 @@
 .container-fluid {
   justify-content: unset !important;
   align-items: center;
+  margin: 20px;
 }
+
+
 h2 {
   margin-left: 68px;
   width: auto;
@@ -79,6 +110,8 @@ h2 {
 }
 .bell-icon,
 .export-icon {
+  font-size: 18px;
+  color: #2e4b9c;
   display: flex;
   width: 52.66px;
   height: 60px;
@@ -90,14 +123,13 @@ h2 {
   left: 1115px;
   cursor: pointer;
 }
-.ti-bell,
-.ti-export {
-  font-size: 20px;
-  color: #2e4b9c;
+.bell-icon{
+  margin-left: 50px;
+  margin-right: 20px;
 }
+
+
 .export-icon {
   background-color: #2e4b9c;
-}
-.ti-export {
   color: white;
 }

@@ -1,0 +1,105 @@
+@media (max-width: 768px) {
+    body {
+        font-family: Arial, sans-serif;
+        margin-top: 50px;
+        padding: 0;
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-direction: column; /* Xếp theo chiều dọc */
+        align-content: center; /* Canh giữa theo chiều ngang */
+      }
+    .navbar {
+        display: none;
+    }
+      .logo-container {
+        width: 50px;
+        height: 53px;
+        margin-top: 10px;
+        text-align: center;
+        position: relative;
+      }
+      
+      .logo {
+        width: 100%;
+        height: auto;
+        border-radius: 20px;
+        border: 1px solid #fff;
+        background-color: #333;
+      }
+      
+      h1 {
+        text-align: center;
+        font-weight: bold;
+        font-size: 56px;
+        color: #2E4B9C;
+      }
+      
+      hr {
+        width: 50%;
+        margin: 20px auto;
+        margin-bottom:10px ;
+      }
+      
+      .container {
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 0 100px;
+      }
+      
+      .form-control {
+        width: 100%;
+        margin: 24px 0px;
+        border-radius: 8px;
+        padding: 10px 10px;
+        border: solid 2px #136fb8;
+        height: 48px;
+      }
+      
+      .input-group > :not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(
+        .valid-feedback
+      ):not(.invalid-tooltip):not(.invalid-feedback) {
+        margin-left: calc(var(--bs-border-width) * -1);
+        border-top-left-radius: 3;
+        border-bottom-left-radius: 3;
+        border-radius: 8px;
+      }
+      
+      .input-group > :not(:nth-child(2)):not(.dropdown-menu):not(.valid-tooltip):not(
+        .valid-feedback
+      ):not(.invalid-tooltip):not(.invalid-feedback) {
+        margin-right: calc(var(--bs-border-width) * -1);
+        border-top-right-radius: 3;
+        border-bottom-right-radius: 3;
+        border-radius: 8px;
+      }
+      
+      .input-group span {
+        margin: 50px;
+      }
+      
+      .form-btn {
+        height: 30%;
+        padding-top: 20px;
+        text-align: center;
+        width: 100%;
+      }
+      
+      .btn {
+        background-color: #136fb8;
+        padding: 10px 10px;
+        font-size: 20px;
+        border-radius: 15px;
+        font-weight: bold;
+        width: 45%;
+        text-align: center;
+        margin: 0 auto;
+      }
+      
+      .move-to-login {
+        padding-top: 10px;
+        text-align: center;
+      }
+      
+  }
+  
