@@ -14,7 +14,7 @@ if ($_SESSION["role"] !== "User") {
 
 <!DOCTYPE html>
 <html lang="en">
-
+  
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,6 +23,7 @@ if ($_SESSION["role"] !== "User") {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./css-design/hompage.css">
+  <link rel="stylesheet" href="./css-design/hompage_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 
@@ -32,24 +33,21 @@ if ($_SESSION["role"] !== "User") {
     <div class="logo-container">
       <img src="./img/circle.webp" alt="" class="logo">
     </div>
-    <div class="icon">
-      <i class="ti-home"></i>
-    </div>
-    <div class="icon">
-      <i class="ti-user"></i>
-    </div>
-    <div class="icon">
-      <i class="ti-bookmark"></i>
-    </div>
-    <div class="icon">
-      <i class="ti-settings"></i>
-    </div>
+    <div id="space"></div>
+    <ul class= "icon">
+    
+      <li class="ti-home"></li>
+      <li class="ti-user"></li>
+      <li class="ti-bookmark"></li>
+      <hr>
+      <li class="ti-settings"></li>
+    </ul>
   </div>
   <!-- Webpage content -->
   <div id="homepage">
 
     <!-- Header -->
-    <nav class="navbar bg-light">
+    <nav class="navbar">
       <div class="container-fluid">
         <!-- search key -->
         <form class="d-flex" role="search">

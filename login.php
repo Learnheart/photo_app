@@ -18,6 +18,7 @@ if (isset($_SESSION["user"])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
     integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="./css-design/registration.css">
+  <link rel="stylesheet" href="./css-design/registration_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 
@@ -29,13 +30,14 @@ if (isset($_SESSION["user"])) {
         src="./img/circle.webp"
         alt="" class="logo">
     </div>
-    <div class="icon">
-      <i class="ti-home"></i></br>
-      <i class="ti-bookmark"></i>
-    </div>
+    <ul class="icon">
+      <li class="ti-home"></li>
+      <li class="ti-bookmark"></li>
+    </ul>
   </div>
   <!-- Content -->
-  <h1 class="mt-5">SIGN IN</h1>
+  <h1 class="mt-5">Sign In</h1>
+  <hr>
   <div class="container">
     <?php
     if (isset($_POST["login"])) {
@@ -111,6 +113,7 @@ if (isset($_SESSION["user"])) {
     <div class="move-to-login mt-3">
       <p>Not registered yet <a href="registration.php">Register Here</a></p>
     </div>
+    <hr>
   </div>
 </body>
 

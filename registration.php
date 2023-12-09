@@ -17,6 +17,7 @@ if (isset($_SESSION["user"])) {
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css-design/registration.css">
+  <link rel="stylesheet" href="./css-design/registration_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 
@@ -26,10 +27,10 @@ if (isset($_SESSION["user"])) {
     <div class="logo-container">
       <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
-    <div class="icon">
-      <i class="ti-home"></i></br>
-      <i class="ti-bookmark"></i>
-    </div>
+    <ul class="icon">
+      <li class="ti-home"></li>
+      <li class="ti-bookmark"></li>
+    </ul>
   </div>
   <!-- Content -->
   <h1 class="mt-5">Sign Up</h1>
