@@ -26,13 +26,11 @@ if (isset($_SESSION["user"])) {
   <div class="navbar">
     <div class="logo-container">
       <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTz5ALKIjY20IpJivXO-ro-GFMZWyYpXP42SwsBF33yp877ot0N4yo7V4_Uhy9okV0aKso&usqp=CAU"
+        src="./img/circle.webp"
         alt="" class="logo">
     </div>
     <div class="icon">
-      <i class="ti-home"></i>
-    </div>
-    <div class="icon">
+      <i class="ti-home"></i></br>
       <i class="ti-bookmark"></i>
     </div>
   </div>
@@ -110,7 +108,7 @@ if (isset($_SESSION["user"])) {
         <input type="submit" value="Login" name="login" class="btn btn-primary">
       </div>
     </form>
-    <div>
+    <div class="move-to-login mt-3">
       <p>Not registered yet <a href="registration.php">Register Here</a></p>
     </div>
   </div>
