@@ -98,13 +98,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- File description -->
         <aside class="description">
           <div class="form-group">
-            <input type="text" class="form-control mt-0" name="caption" placeholder="Add a title">
+            <input type="text" class="form-upload mt-0" name="caption" placeholder="Add a title">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="description" placeholder="Add a detailed description">
+            <input type="text" class="form-upload" name="description" placeholder="Add a detailed description">
           </div>
           <div class="form-group">
-            <select name="category" id="category" class="form-control" required>
+            <select name="category" id="category" class="form-upload" required>
               <?php
               include "database.php";
               if ($conn) {
@@ -129,7 +129,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
 
           <div class="post-img">
-            <input type="submit" value="Post" name="post-img" class="btn btn-primary">
+            <input type="submit" value="Post" name="post-img" class="btn">
           </div>
         </aside>
       </div>
