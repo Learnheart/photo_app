@@ -73,18 +73,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <hr class="hr-nav">
     <!-- Upload file -->
     <!-- File frame -->
-    <main id="upload">
-      <div class="file">
-        <div class="icon">
-          <i class="ti-export"></i>
-        </div> <br>
-        <h5>Choose a file to upload</h5>
-        <p>We recommend using high quality file less than 20MB</p>
-      </div>
+    <!-- <main id="upload"> -->
+    <!-- form for upload img -->
+    <form action="upload-img.php" method="post" id="upload" enctype="multipart/form-data" class="container">
+      <div class="upload-container">
+        <!-- File div -->
+        <div class="file">
+          <label for="img">
+            <div class="icon">
+              <i class="ti-export"></i>
+            </div>
+          </label>
+          <input type="file" name="img" id="img" class="form-control-file">
+          <label for="img">
+            <br>
 
-      <!-- File description -->
-      <aside class="description">
-        <form action="upload-img.php" method="post" id="upload-form">
+            <p>We recommend using a high-quality file less than 20MB</p>
+          </label> <br>
+        </div>
+
+        <!-- File description -->
+        <aside class="description">
           <div class="form-group">
             <input type="text" class="form-upload mt-0" name="caption" placeholder="Add a title">
           </div>
@@ -96,7 +105,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <?php
               include "database.php";
               if ($conn) {
-                $query = "SELECT cateName FROM category";
+                $query = "SELECT cateID, cateName FROM category";
                 $result = mysqli_query($conn, $query);
 
                 while ($row = mysqli_fetch_assoc($result)) {
@@ -105,12 +114,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
                 mysqli_close($conn); // Close the database connection
               }
-
               ?>
             </select>
           </div>
           <div class="form-group">
-            <select class="form-control" name="album">
+            <select class="form-control" name="album" id="album">
               <option value="album1">Album 1</option>
               <option value="album2">Album 2</option>
               <option value="album3">Album 3</option>
@@ -120,9 +128,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="post-img">
             <input type="submit" value="Post" name="post-img" class="btn">
           </div>
-        </form>
-      </aside>
-    </main>
+        </aside>
+      </div>
+    </form>
+
+    <!-- </main> -->
+
     <div class="container">
       <a href="./homepage.php" class="btn btn-warning">Back</a>
     </div>
