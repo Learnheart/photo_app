@@ -155,33 +155,6 @@ hr {
   width: 100%;
 }
 
-/* File frame */
-.file {
-  border-radius: 20px;
-  border: 1px solid transparent;
-  width: 750px;
-  height: 500px;
-  margin-left:50px;
-  text-align: center;
-  background: #efefef;
-  color: #979797;
-  display: flex; /* Biến .file thành container flex */
-  flex-direction: column; /* Dạng cột để các phần tử được xếp theo chiều dọc */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  justify-content: center; /* Căn giữa theo chiều ngang */
-  cursor: pointer; 
-}
-
-.ti-export {
-  margin-bottom:20px;
-  transform: scale(2); /* Tăng kích thước biểu tượng */
-  font-size: 30px; /* Kích thước của biểu tượng */
-  margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
-  
-}
-h5,p{
-  color:black;
-}
 #upload {
   display: flex;
   justify-content: space-between;
