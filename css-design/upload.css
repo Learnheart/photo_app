@@ -64,6 +64,7 @@ hr {
   border-radius: 15px;
   border: 1px solid #e4e9f2;
   margin-left: 20px;
+  font-size:20px;
 }
 .input-group-text {
   border-radius: 15px;
@@ -90,6 +91,7 @@ hr {
 .container-fluid {
   justify-content: unset !important;
   align-items: center;
+  margin: 20px;
 }
 
 h2 {
@@ -97,8 +99,8 @@ h2 {
   width: auto;
   height: 38px;
   flex-shrink: 0;
-
   color: #000;
+  font-family: "Akaya Kanadaka", cursive;
   font-size: 32px;
   font-style: normal;
   font-weight: 400;
@@ -155,19 +157,57 @@ hr {
   justify-content: center;
   width: 30%;
 }
-/* File description */
-.form-control {
+
+.hr-nav {
+  width: 1200px;
+  margin-left: 40px;
+  margin-top:-10px;
+}
+.hr-sidebar{
+  width: 35px;
+  margin-bottom: 30px;
+}
+
+.form-upload {
   width: 373px;
   height: 52px;
-  float: right;
   border-radius: 20px;
   background: #efefef;
   color: #979797;
+  border: 1px solid transparent; /* Màu viền ô */
   font-family: Akaya Kanadaka;
   font-size: 20px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  letter-spacing: 0.2px;
+  padding: 15px; /* Thêm padding để cách xa viền ô */
   justify-content: center;
+  margin-bottom: 30px;
+  margin-right: 150px;
+  cursor: pointer; /* Hiển thị con trỏ khi di chuột qua */
+  transition: background 0.3s ease; /* Hiệu ứng chuyển động màu nền */
+}
+
+
+.file {
+  border-radius: 20px;
+  border: 1px solid transparent;
+  width: 750px;
+  height: 500px;
+  margin-left:50px;
+  text-align: center;
+  background: #efefef;
+  color: #979797;
+  display: flex; /* Biến .file thành container flex */
+  flex-direction: column; /* Dạng cột để các phần tử được xếp theo chiều dọc */
+  align-items: center; /* Căn giữa theo chiều dọc */
+  justify-content: center; /* Căn giữa theo chiều ngang */
+}
+
+.ti-export {
+  margin-bottom:20px;
+  transform: scale(2); /* Tăng kích thước biểu tượng */
+  font-size: 30px; /* Kích thước của biểu tượng */
+  margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+  
+}
+h5,p{
+  color:black;
 }

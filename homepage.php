@@ -41,7 +41,7 @@ if ($_SESSION["role"] !== "User") {
       <li class="ti-home"></li>
       <li class="ti-user"></li>
       <li class="ti-bookmark"></li>
-      <hr>
+      <hr class="hr-sidebar">
       <li class="ti-settings"></li>
     </ul>
   </div>
@@ -106,6 +106,7 @@ if ($_SESSION["role"] !== "User") {
         <a class="nav-link disabled">Anime</a>
       </li>
     </ul>
+    <hr class="hr-nav">
     <!-- Page content -->
     <main class="page-content">
 

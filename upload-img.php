@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <li class="ti-home"></li>
       <li class="ti-user"></li>
       <li class="ti-bookmark"></li>
-      <hr>
+      <hr class="hr-sidebar">
       <li class="ti-settings"></li>
     </ul>
   </div>
@@ -70,7 +70,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
       </div>
     </nav>
-    <hr>
+    <hr class="hr-nav">
     <!-- Upload file -->
     <!-- File frame -->
     <main id="upload">
@@ -86,13 +86,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       <aside class="description">
         <form action="upload-img.php" method="post" id="upload-form">
           <div class="form-group">
-            <input type="text" class="form-control mt-0" name="caption" placeholder="Add a title">
+            <input type="text" class="form-upload mt-0" name="caption" placeholder="Add a title">
           </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="description" placeholder="Add a detail description">
+            <input type="text" class="form-upload" name="description" placeholder="Add a detail description">
           </div>
           <div class="form-group">
-            <select name="category" id="category" class="form-control" aria-placeholder="Category" require>
+            <select name="category" id="category" class="form-upload" aria-placeholder="Category" require>
               <?php
               include "database.php";
               if ($conn) {
