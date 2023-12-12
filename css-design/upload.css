@@ -49,10 +49,10 @@ body {
   position: relative;
   list-style: none;
 }
-.ti-home:hover,
+.ti-home:hover, 
 .ti-user:hover,
 .ti-bookmark:hover,
-.ti-settings:hover {
+.ti-settings:hover{
   font-weight: bold;
   color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
@@ -136,8 +136,9 @@ h2 {
 }
 .bell-icon:hover {
   font-weight: bold;
-  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
+
 
 .save-icon {
   background-color: #2e4b9c;
@@ -222,4 +223,25 @@ hr {
 h5,
 p {
   color: black;
+}
+
+/* Thêm CSS mới cho nút "Post" */
+.post-img {
+  width: 249px;
+  height: 54px;
+  border-radius: 15px;
+  background-color: #136fb8; /* Màu nền của nút "Post" */
+  text-align: center;
+  padding: 10px;
+  cursor: pointer;
+  margin-top: 20px; /* Khoảng cách giữa nút và phần nhập liệu */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: auto; 
+  margin-right: auto; 
+}
+.btn {
+  color: white; /* Màu chữ "Post" */
+  font-size: 25px;
 }
