@@ -64,7 +64,7 @@ hr {
   border-radius: 15px;
   border: 1px solid #e4e9f2;
   margin-left: 20px;
-  font-size:20px;
+  font-size: 20px;
 }
 .input-group-text {
   border-radius: 15px;
@@ -144,26 +144,31 @@ hr {
 .file {
   border: 1px solid black;
   width: 60%;
-  text-align: center;
 }
 #upload {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  /* align-items: flex-start; */
+  text-align: center;
+}
+.upload-container {
+  display: inline-flex;
+  width: 100%;
+  justify-content: space-between;
 }
 
 .description {
-  display: flex;
   justify-content: center;
   width: 30%;
+  box-sizing: border-box;
 }
 
 .hr-nav {
   width: 1200px;
   margin-left: 40px;
-  margin-top:-10px;
+  margin-top: -10px;
 }
-.hr-sidebar{
+.hr-sidebar {
   width: 35px;
   margin-bottom: 30px;
 }
@@ -185,13 +190,13 @@ hr {
   transition: background 0.3s ease; /* Hiệu ứng chuyển động màu nền */
 }
 
-
 .file {
   border-radius: 20px;
+  width: 60%;
   border: 1px solid transparent;
   width: 750px;
   height: 500px;
-  margin-left:50px;
+  margin-left: 50px;
   text-align: center;
   background: #efefef;
   color: #979797;
@@ -202,12 +207,12 @@ hr {
 }
 
 .ti-export {
-  margin-bottom:20px;
+  margin-bottom: 20px;
   transform: scale(2); /* Tăng kích thước biểu tượng */
   font-size: 30px; /* Kích thước của biểu tượng */
   margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
-  
 }
-h5,p{
-  color:black;
+h5,
+p {
+  color: black;
 }
