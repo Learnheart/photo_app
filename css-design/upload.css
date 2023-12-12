@@ -47,7 +47,17 @@ body {
   float: left;
   position: relative;
   list-style: none;
+  cursor: pointer; 
 }
+.ti-home:hover, 
+.ti-user:hover,
+.ti-bookmark:hover,
+.ti-settings:hover{
+  font-weight: bold;
+  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+
+
 li {
   margin-bottom: 25px;
   font-size: 25px;
@@ -126,6 +136,11 @@ h2 {
   margin-left: 50px;
   margin-right: 20px;
 }
+.bell-icon:hover {
+  font-weight: bold;
+  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+
 
 .save-icon {
   background-color: #2e4b9c;
@@ -140,11 +155,6 @@ hr {
   width: 100%;
 }
 
-/* File frame */
-.file {
-  border: 1px solid black;
-  width: 60%;
-}
 #upload {
   display: flex;
   justify-content: space-between;
@@ -189,23 +199,20 @@ hr {
   cursor: pointer; /* Hiển thị con trỏ khi di chuột qua */
   transition: background 0.3s ease; /* Hiệu ứng chuyển động màu nền */
 }
-
-.file {
-  border-radius: 20px;
-  width: 60%;
-  border: 1px solid transparent;
-  width: 750px;
-  height: 500px;
-  margin-left: 50px;
+/* Thêm CSS mới cho nút "Post" */
+.post-img {
+  width: 249px;
+  height: 54px;
+  border-radius: 15px;
+  background-color: #136fb8; /* Màu nền của nút "Post" */
+  color: white;
   text-align: center;
-  background: #efefef;
-  color: #979797;
-  display: flex; /* Biến .file thành container flex */
-  flex-direction: column; /* Dạng cột để các phần tử được xếp theo chiều dọc */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  justify-content: center; /* Căn giữa theo chiều ngang */
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px; /* Khoảng cách giữa nút và phần nhập liệu */
 }
-
 .ti-export {
   margin-bottom: 20px;
   transform: scale(2); /* Tăng kích thước biểu tượng */
@@ -216,3 +223,4 @@ h5,
 p {
   color: black;
 }
+
