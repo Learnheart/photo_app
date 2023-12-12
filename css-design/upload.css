@@ -47,15 +47,16 @@ body {
   float: left;
   position: relative;
   list-style: none;
-  cursor: pointer;
+  cursor: pointer; 
 }
-.ti-home:hover,
+.ti-home:hover, 
 .ti-user:hover,
 .ti-bookmark:hover,
-.ti-settings:hover {
+.ti-settings:hover{
   font-weight: bold;
   color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
+
 
 li {
   margin-bottom: 25px;
@@ -73,7 +74,7 @@ hr {
   border-radius: 15px;
   border: 1px solid #e4e9f2;
   margin-left: 20px;
-  font-size: 20px;
+  font-size:20px;
 }
 .input-group-text {
   border-radius: 15px;
@@ -137,8 +138,9 @@ h2 {
 }
 .bell-icon:hover {
   font-weight: bold;
-  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
+
 
 .save-icon {
   background-color: #2e4b9c;
@@ -153,35 +155,25 @@ hr {
   width: 100%;
 }
 
-/* File frame */
-.file {
-  border: 1px solid black;
-  width: 60%;
-}
+
 #upload {
   display: flex;
   justify-content: space-between;
-  /* align-items: flex-start; */
-  text-align: center;
-}
-.upload-container {
-  display: inline-flex;
-  width: 100%;
-  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .description {
+  display: flex;
   justify-content: center;
   width: 30%;
-  box-sizing: border-box;
 }
 
 .hr-nav {
   width: 1200px;
   margin-left: 40px;
-  margin-top: -10px;
+  margin-top:-10px;
 }
-.hr-sidebar {
+.hr-sidebar{
   width: 35px;
   margin-bottom: 30px;
 }
@@ -202,14 +194,13 @@ hr {
   cursor: pointer; /* Hiển thị con trỏ khi di chuột qua */
   transition: background 0.3s ease; /* Hiệu ứng chuyển động màu nền */
 }
-
-.file {
-  border-radius: 20px;
-  width: 60%;
-  border: 1px solid transparent;
-  width: 750px;
-  height: 500px;
-  margin-left: 50px;
+/* Thêm CSS mới cho nút "Post" */
+.post-img {
+  width: 249px;
+  height: 54px;
+  border-radius: 15px;
+  background-color: #136fb8; /* Màu nền của nút "Post" */
+  color: white;
   text-align: center;
   font-size: 25px;
   padding: 10px;
@@ -217,13 +208,8 @@ hr {
   transition: background 0.3s ease;
   margin-top: 20px; /* Khoảng cách giữa nút và phần nhập liệu */
 }
-.ti-export {
-  margin-bottom: 20px;
-  transform: scale(2); /* Tăng kích thước biểu tượng */
-  font-size: 30px; /* Kích thước của biểu tượng */
-  margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+
+.post-img:hover {
+  background-color: #0e5a9c; /* Màu nền khi di chuột qua */
 }
-h5,
-p {
-  color: black;
-}
+
