@@ -47,7 +47,16 @@ body {
   float: left;
   position: relative;
   list-style: none;
+  cursor: pointer;
 }
+.ti-home:hover,
+.ti-user:hover,
+.ti-bookmark:hover,
+.ti-settings:hover {
+  font-weight: bold;
+  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+
 li {
   margin-bottom: 25px;
   font-size: 25px;
@@ -126,6 +135,10 @@ h2 {
   margin-left: 50px;
   margin-right: 20px;
 }
+.bell-icon:hover {
+  font-weight: bold;
+  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
 
 .save-icon {
   background-color: #2e4b9c;
@@ -141,6 +154,10 @@ hr {
 }
 
 /* File frame */
+.file {
+  border: 1px solid black;
+  width: 60%;
+}
 #upload {
   display: flex;
   justify-content: space-between;
@@ -187,8 +204,6 @@ hr {
 }
 
 .file {
-  border: 1px solid black;
-  width: 60%;
   border-radius: 20px;
   width: 60%;
   border: 1px solid transparent;
@@ -196,14 +211,12 @@ hr {
   height: 500px;
   margin-left: 50px;
   text-align: center;
-  background: #efefef;
-  color: #979797;
-  display: flex; /* Biến .file thành container flex */
-  flex-direction: column; /* Dạng cột để các phần tử được xếp theo chiều dọc */
-  align-items: center; /* Căn giữa theo chiều dọc */
-  justify-content: center; /* Căn giữa theo chiều ngang */
+  font-size: 25px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  margin-top: 20px; /* Khoảng cách giữa nút và phần nhập liệu */
 }
-
 .ti-export {
   margin-bottom: 20px;
   transform: scale(2); /* Tăng kích thước biểu tượng */

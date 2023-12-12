@@ -30,7 +30,13 @@ body {
   float: left;
   position: relative;
   list-style: none;
-
+}
+.ti-home:hover, 
+.ti-user:hover,
+.ti-bookmark:hover,
+.ti-settings:hover{
+  font-weight: bold;
+  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
 li {
   margin-bottom: 25px;
