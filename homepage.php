@@ -14,7 +14,7 @@ if ($_SESSION["role"] !== "User") {
 
 <!DOCTYPE html>
 <html lang="en">
-  
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,8 +36,8 @@ if ($_SESSION["role"] !== "User") {
       <img src="./img/circle.webp" alt="" class="logo">
     </div>
     <div id="space"></div>
-    <ul class= "icon">
-    
+    <ul class="icon">
+
       <li class="ti-home"></li>
       <li class="ti-user"></li>
       <li class="ti-bookmark"></li>
@@ -71,42 +71,45 @@ if ($_SESSION["role"] !== "User") {
         <div class="bell-icon">
           <i class="ti-bell"></i>
         </div>
-        <div class="export-icon">
+        <a href="./upload-img.php" class="export-icon">
           <i class="ti-export"></i>
-        </div>
+        </a>
       </div>
     </nav>
     <!-- Categories -->
     <ul class="nav">
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled">Sport</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled">Animal</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
+        <a class="nav-link disabled">Cake</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Anime</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Meme</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Art</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Anime</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Meme</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <a class="nav-link disabled">Anime</a>
       </li>
     </ul>
     <!-- Page content -->
+    <main class="page-content">
+
+    </main>
     <!-- Pagination -->
     <!-- Footer -->
     <!-- Logout button -->
