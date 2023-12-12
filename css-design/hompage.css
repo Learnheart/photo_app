@@ -50,8 +50,13 @@ li {
   margin-bottom: 25px;
   font-size: 25px;
 }
-hr {
-  width: 50%;
+.hr-nav {
+  width: 1200px;
+  margin-left: 40px;
+  margin-top:-10px;
+}
+.hr-sidebar{
+  width: 35px;
   margin-bottom: 30px;
 }
 
@@ -139,14 +144,21 @@ h2 {
 .nav {
   display: flex;
   justify-content: space-between;
-  padding: 20px;
+  width: 1180px;
+  margin-left:50px;
+  margin-top:-10px;
 }
 .nav-item {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  font-family: Akaya Kanadaka;
   width: 100px;
   height: 38px;
+  font-size: 20px;
+  text-align: center;
   flex-shrink: 0;
   border-radius: 25px;
   border: 1px solid #e4e9f2;
   background: #fff;
-  margin: 20px;
 }
