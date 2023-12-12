@@ -141,10 +141,6 @@ hr {
 }
 
 /* File frame */
-.file {
-  border: 1px solid black;
-  width: 60%;
-}
 #upload {
   display: flex;
   justify-content: space-between;
@@ -191,6 +187,8 @@ hr {
 }
 
 .file {
+  border: 1px solid black;
+  width: 60%;
   border-radius: 20px;
   width: 60%;
   border: 1px solid transparent;
