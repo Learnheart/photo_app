@@ -37,9 +37,10 @@ if ($_SESSION["role"] !== "User") {
     </div>
     <div id="space"></div>
     <ul class="icon">
-
       <li class="ti-home"></li>
-      <li class="ti-user"></li>
+      <a href="./user-profile.php">
+        <li class="ti-user"></li>
+      </a>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
       <li class="ti-settings"></li>
@@ -109,8 +110,42 @@ if ($_SESSION["role"] !== "User") {
     <hr class="hr-nav">
     <!-- Page content -->
     <main class="page-content">
+      <div class="container">
+        <?php
+        include('database.php');
+        $sql = "SELECT photoPath FROM photo ORDER BY photoId DESC";
+        $res = mysqli_query($conn, $sql);
 
+        if (mysqli_num_rows($res) > 0) {
+            $counter = 0; // Counter to determine when to start a new row
+            while ($images = mysqli_fetch_assoc($res)) {
+                if ($counter % 3 == 0) {
+                    // Start a new row for every 3 images
+                    echo '<div class="row">';
+                }
+                ?>
+        <div class="col">
+          <div class="alb">
+            <img src="uploads/<?= $images['photoPath'] ?>" class="img-fluid" alt="Image">
+          </div>
+        </div>
+        <?php
+                if ($counter % 3 == 2) {
+                    // Close the row after every 3 images
+                    echo '</div>';
+                }
+                $counter++;
+            }
+
+            // Close the row if there are remaining images
+            if ($counter % 3 != 0) {
+                echo '</div>';
+            }
+        }
+        ?>
+      </div>
     </main>
+
     <!-- Pagination -->
     <!-- Footer -->
     <!-- Logout button -->

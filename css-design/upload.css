@@ -271,6 +271,7 @@ p {
   margin-left: auto; /* Tự động căn giữa theo chiều ngang */
   margin-right: auto; /* Tự động căn giữa theo chiều ngang */
 }
+
 .btn:hover {
   background-color: #0e5a9c; /* Màu nền khi di chuột qua */
 }
