@@ -212,14 +212,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="form-group">
             <select class="form-control" name="album" id="album">
-              <option value="">No Album</option>
-              <option value="album1">Album 1</option>
-              <option value="album2">Album 2</option>
-              <option value="album3">Album 3</option>
+              <?php
+              include "database.php";
+              if ($conn) {
+                $query = "SELECT albumId, albumName FROM album";
+                $result = mysqli_query($conn, $query);
+
+                while ($row = mysqli_fetch_assoc($result)) {
+                  echo "<option value='{$row['albumId']}'>{$row['albumName']}</option>";
+                }
+
+                $album = isset($_POST['album']) ? $_POST['album'] : null;
+                mysqli_close($conn); // Close the database connection
+              }
+              ?>
             </select>
-            <?php
-            $album = isset($_POST['album']) ? $_POST['album'] : null;
-            ?>
           </div>
 
 
