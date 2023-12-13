@@ -117,33 +117,39 @@ if ($_SESSION["role"] !== "User") {
         $res = mysqli_query($conn, $sql);
 
         if (mysqli_num_rows($res) > 0) {
-            $counter = 0; // Counter to determine when to start a new row
-            while ($images = mysqli_fetch_assoc($res)) {
-                if ($counter % 3 == 0) {
-                    // Start a new row for every 3 images
-                    echo '<div class="row">';
-                }
-                ?>
+          $counter = 0; // Counter to determine when to start a new row
+          while ($images = mysqli_fetch_assoc($res)) {
+            if ($counter % 3 == 0) {
+              // Start a new row for every 3 images
+              echo '<div class="row">';
+            }
+        ?>
         <div class="col">
           <div class="alb">
             <img src="uploads/<?= $images['photoPath'] ?>" class="img-fluid" alt="Image">
           </div>
+          <div class="alb-user">
+            <?php
+                
+                ?>
+          </div>
         </div>
         <?php
-                if ($counter % 3 == 2) {
-                    // Close the row after every 3 images
-                    echo '</div>';
-                }
-                $counter++;
+            if ($counter % 3 == 2) {
+              // Close the row after every 3 images
+              echo '</div>';
             }
+            $counter++;
+          }
 
-            // Close the row if there are remaining images
-            if ($counter % 3 != 0) {
-                echo '</div>';
-            }
+          // Close the row if there are remaining images
+          if ($counter % 3 != 0) {
+            echo '</div>';
+          }
         }
         ?>
       </div>
+
     </main>
 
     <!-- Pagination -->
