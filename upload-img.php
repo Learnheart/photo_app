@@ -177,7 +177,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="file" name="img" id="img" class="form-control-file">
           <label for="img">
             <br>
-
             <p>We recommend using a high-quality file less than 20MB</p>
           </label> <br>
         </div>
@@ -208,6 +207,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
+
             <select class="form-control" name="album" id="album">
               <?php
               include "database.php";
@@ -228,7 +228,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
           <div class="post-img">
-            <input type="submit" value="Post" name="post-img" class="btn">
+            <input type="submit" value="Post" name="post-img" class="btn btn-primary">
           </div>
         </aside>
       </div>

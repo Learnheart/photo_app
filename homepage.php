@@ -86,7 +86,7 @@ if ($_SESSION["role"] !== "User") {
         <a class="nav-link disabled">Animal</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Cake</a>
+        <a class="nav-link disabled">Food</a>
       </li>
       <li class="nav-item">
         <a class="nav-link disabled">Anime</a>
@@ -95,16 +95,16 @@ if ($_SESSION["role"] !== "User") {
         <a class="nav-link disabled">Meme</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Art</a>
+        <a class="nav-link disabled">Arrt</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Anime</a>
+        <a class="nav-link disabled">Fruit</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Meme</a>
+        <a class="nav-link disabled">Trending</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link disabled">Anime</a>
+        <a class="nav-link disabled">School</a>
       </li>
     </ul>
     <hr class="hr-nav">
