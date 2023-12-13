@@ -33,8 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["createAlbum"])) {
 
   // Close the statement
   mysqli_stmt_close($stmt);
-
-  // Redirect to a page or show a success message
+  header("Location: user-profile.php");
   exit();
 }
 ?>
