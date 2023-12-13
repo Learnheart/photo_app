@@ -1,0 +1,180 @@
+/* Include the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+#homepage {
+    margin: 0 24px 0 124px;
+  }
+
+/* Side bar design */
+#side-bar {
+  height: 100vh;
+  width: 100px;
+  background-color: #333; /* Adjust the background color as needed */
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.logo {
+  width: 80px; /* Adjust the width of your logo */
+  position: absolute;
+  top: 10px;
+  left: 0;
+  right: 0;
+  transform: translateY(-230%);
+  margin: 0;
+}
+
+.icon {
+  color: rgb(208, 212, 214);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0.7em 0;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+.ti-home:hover, 
+.ti-user:hover,
+.ti-bookmark:hover,
+.ti-settings:hover{
+  font-weight: bold;
+  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+li {
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+.hr-nav {
+  width: 1200px;
+  margin-left: 40px;
+  margin-top:-10px;
+}
+.hr-sidebar{
+  width: 35px;
+  margin-bottom: 30px;
+}
+
+/* Other styles... */
+
+/* Search key */
+.input-group {
+  border-radius: 15px;
+  border: 1px solid #e4e9f2;
+  margin-left: 20px;
+}
+.input-group-text {
+  border-radius: 15px;
+  font-size: 20px;
+  background-color: white;
+}
+.form-control {
+  border-radius: 15px;
+  color: #8f9bb3;
+  font-family: Akaya Kanadaka;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.d-flex {
+  width: 770px;
+}
+/* User info */
+.user-info {
+  display: inline;
+  text-align: center;
+}
+.container-fluid {
+  justify-content: unset !important;
+  align-items: center;
+  margin: 20px;
+}
+
+h2 {
+  margin-left: 68px;
+  width: auto;
+  height: 38px;
+  flex-shrink: 0;
+
+  color: #000;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+.bell-icon,
+.export-icon {
+  font-size: 18px;
+  color: #2e4b9c;
+  display: flex;
+  width: 52.66px;
+  height: 60px;
+  top: 43px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e4e9f2;
+  border-radius: 50%;
+  left: 1115px;
+  cursor: pointer;
+}
+.bell-icon {
+  margin-left: 50px;
+  margin-right: 20px;
+}
+.bell-icon:hover {
+  font-weight: bold;
+  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+
+.export-icon {
+  background-color: #2e4b9c;
+  color: white !important;
+  text-decoration: none;
+}
+.export-icon:hover {
+  background: #536e9f;
+  color: #fff;
+}
+
+/* Category bar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width:fit-content;
+  margin-left:100px;
+  margin-top:-10px;
+}
+.nav-item {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  font-family: Akaya Kanadaka;
+  width: 100px;
+  height: 38px;
+  font-size: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  border-radius: 25px;
+  border: 1px solid #e4e9f2;
+  background: #fff;
+  cursor: pointer;
+}
+.nav-item:hover{
+  font-weight: bold;
+  background-color: #2E4B9C78;
+}
