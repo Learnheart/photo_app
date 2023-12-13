@@ -68,6 +68,12 @@ hr {
 /* Other styles... */
 
 /* Search key */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 1500px;
+}
+
 .input-group {
   border-radius: 15px;
   border: 1px solid #a4a7ac;
@@ -171,9 +177,8 @@ hr {
   width: 30%;
   box-sizing: border-box;
 }
-
 .hr-nav {
-  width: 1200px;
+  width: 1250px;
   margin-left: 40px;
   margin-top: -10px;
 }
