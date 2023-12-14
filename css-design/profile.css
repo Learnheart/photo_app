@@ -1,8 +1,8 @@
 /* Include the font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
 #homepage {
-    margin: 0 24px 0 124px;
-  }
+  margin: 0 24px 0 124px;
+}
 
 /* Side bar design */
 #side-bar {
@@ -46,10 +46,10 @@
   position: relative;
   list-style: none;
 }
-.ti-home:hover, 
+.ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
-.ti-settings:hover{
+.ti-settings:hover {
   font-weight: bold;
   color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
@@ -60,9 +60,9 @@ li {
 .hr-nav {
   width: 1200px;
   margin-left: 40px;
-  margin-top:-10px;
+  margin-top: -10px;
 }
-.hr-sidebar{
+.hr-sidebar {
   width: 35px;
   margin-bottom: 30px;
 }
@@ -138,7 +138,7 @@ h2 {
 }
 .bell-icon:hover {
   font-weight: bold;
-  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
 
 .export-icon {
@@ -155,9 +155,9 @@ h2 {
 .navbar {
   display: flex;
   justify-content: space-between;
-  width:fit-content;
-  margin-left:100px;
-  margin-top:-10px;
+  width: fit-content;
+  margin-left: 100px;
+  margin-top: -10px;
 }
 .nav-item {
   display: flex; /* Sử dụng flexbox */
@@ -174,7 +174,19 @@ h2 {
   background: #fff;
   cursor: pointer;
 }
-.nav-item:hover{
+.nav-item:hover {
   font-weight: bold;
-  background-color: #2E4B9C78;
+  background-color: #2e4b9c78;
+}
+
+/* Upload Image css */
+.upload-img {
+  max-width: 60%;
+  display: inline-block;
+}
+.img-fluid {
+  border-radius: 10%;
+}
+.user-info {
+  float: right;
 }
