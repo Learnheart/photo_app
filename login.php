@@ -26,9 +26,7 @@ if (isset($_SESSION["user"])) {
   <!-- Navbar -->
   <div class="navbar">
     <div class="logo-container">
-      <img
-        src="./img/circle.webp"
-        alt="" class="logo">
+      <img src="./img/circle.webp" alt="" class="logo">
     </div>
     <ul class="icon">
       <li class="ti-home"></li>
@@ -57,8 +55,8 @@ if (isset($_SESSION["user"])) {
       $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
       // Debugging statements
-      echo "Entered Password: " . $password . "<br>";
-      echo "Stored Password Hash: " . $user["password"] . "<br>";
+      // echo "Entered Password: " . $password . "<br>";
+      // echo "Stored Password Hash: " . $user["password"] . "<br>";
 
       if ($user) {
         $storedPasswordHash = $user["password"];

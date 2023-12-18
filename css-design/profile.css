@@ -184,9 +184,24 @@ h2 {
   max-width: 60%;
   display: inline-block;
 }
-.img-fluid {
-  border-radius: 10%;
+.img-col .img-fluid {
+  border: #000 1px solid;
+  height: 316px;
+  width: 365px;
+  object-fit: cover;
+}
+
+/* Avatar */
+.avatar .img-fluid {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 .user-info {
   float: right;
+  width: 30%;
+}
+
+.back-btn {
+  text-align: center;
 }

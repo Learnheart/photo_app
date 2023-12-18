@@ -48,7 +48,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $error = $_FILES['img']['error'];
 
     if ($error === 0) {
-      if ($img_size < 125000) {
+      // Allow upload img less than 20Mb
+      if ($img_size < 20 * 1024 * 1024) {
         $img_ex = pathinfo($img_name, PATHINFO_EXTENSION);
         $img_ex_lc = strtolower($img_ex);
 
@@ -122,8 +123,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div id="space"></div>
     <ul class="icon">
 
-      <li class="ti-home"></li>
-      <li class="ti-user"></li>
+      <li>
+        <a href="./homepage.php" class="ti-home"></a>
+      </li>
+      <li>
+        <a href="./user-profile.php" class="ti-user"></a>
+      </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
       <li class="ti-settings"></li>

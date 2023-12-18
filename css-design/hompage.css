@@ -193,3 +193,12 @@ h2 {
 
   border-radius: 20px;
 }
+
+.alb-user li {
+  display: inline-block;
+}
+.alb-user > li > .img-fluid {
+  width: 40px;
+  height: 38px;
+  border-radius: 50%;
+}
