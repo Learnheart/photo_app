@@ -46,10 +46,10 @@
   position: relative;
   list-style: none;
 }
-.ti-home:hover, 
+.ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
-.ti-settings:hover{
+.ti-settings:hover {
   font-weight: bold;
   color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
@@ -60,9 +60,9 @@ li {
 .hr-nav {
   width: 1200px;
   margin-left: 40px;
-  margin-top:-10px;
+  margin-top: -10px;
 }
-.hr-sidebar{
+.hr-sidebar {
   width: 35px;
   margin-bottom: 30px;
 }
@@ -138,7 +138,7 @@ h2 {
 }
 .bell-icon:hover {
   font-weight: bold;
-  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
 
 .export-icon {
@@ -156,8 +156,8 @@ h2 {
   display: flex;
   justify-content: space-between;
   width: fit-content;
-  margin-left:50px;
-  margin-top:-10px;
+  margin-left: 50px;
+  margin-top: -10px;
 }
 .nav-item {
   display: flex; /* Sử dụng flexbox */
@@ -169,12 +169,26 @@ h2 {
   font-size: 20px;
   text-align: center;
   flex-shrink: 0;
-  margin-right: 35px;;
+  margin-right: 35px;
   border-radius: 25px;
   border: 1px solid #e4e9f2;
   background: #fff;
   cursor: pointer;
 }
+
 .nav-item:hover{
   background-color: #E4E9F2;
+
+/* Page content */
+.alb {
+  border-radius: 20px;
+}
+.alb img {
+  border: 1px solid black;
+  width: 412px;
+  height: 275px;
+  flex-shrink: 0;
+  object-fit: cover;
+
+  border-radius: 20px;
 }

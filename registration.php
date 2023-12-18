@@ -14,8 +14,7 @@ if (isset($_SESSION["user"])) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Registration Form</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="./css-design/registration.css">
   <link rel="stylesheet" href="./css-design/registration_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -83,13 +82,16 @@ if (isset($_SESSION["user"])) {
 
       // insert into database
       else {
-        $sql = "INSERT INTO account (firstName, lastName, email, password) VALUES (?, ?, ?, ?)";
+        $sql = "INSERT INTO account (firstName, lastName, email, password, avatar) VALUES (?, ?, ?, ?, ?)";
         $init = mysqli_stmt_init($conn);
         $preparedStm = mysqli_stmt_prepare($init, $sql);
 
         if ($preparedStm) {
+          // Set default ava
+          $defaultAva = 'default-ava.png';
+
           // bind value into sql cmd
-          mysqli_stmt_bind_param($init, "ssss", $firstName, $lastName, $email, $password_hash);
+          mysqli_stmt_bind_param($init, "sssss", $firstName, $lastName, $email, $password_hash, $defaultAva);
           mysqli_stmt_execute($init);
           // set session 
           $_SESSION["user"] = $user["userId"];
