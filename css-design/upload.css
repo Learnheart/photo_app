@@ -49,10 +49,10 @@ body {
   position: relative;
   list-style: none;
 }
-.ti-home:hover, 
+.ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
-.ti-settings:hover{
+.ti-settings:hover {
   font-weight: bold;
   color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
@@ -142,7 +142,7 @@ h2 {
 }
 .bell-icon:hover {
   font-weight: bold;
-  background-color: #2E4B9C78; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  background-color: #2e4b9c78; /* Đổi màu chữ khi hover (tuỳ chọn) */
 }
 
 .export-icon {
