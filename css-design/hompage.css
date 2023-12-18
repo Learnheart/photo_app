@@ -175,10 +175,9 @@ h2 {
   background: #fff;
   cursor: pointer;
 }
-.nav-item:hover {
-  font-weight: bold;
-  background-color: #2e4b9c78;
-}
+
+.nav-item:hover{
+  background-color: #E4E9F2;
 
 /* Page content */
 .alb {

@@ -159,8 +159,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <div class="bell-icon">
           <i class="ti-bell"></i>
         </div>
-        <div class="save-icon">
-          <i class="ti-save"></i>
+        <div class="export-icon">
+          <i class="ti-export"></i>
         </div>
       </div>
     </nav>
