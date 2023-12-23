@@ -29,9 +29,6 @@ function showCmt($conn, $photoId)
   return $cmtList;
 }
 
-// Check if photoId is set in $_GET
-$photoId = isset($_GET['photoId']) ? htmlspecialchars($_GET['photoId']) : null;
-$cmtList = showCmt($conn, $photoId);
 
 function insertCmt($conn, $userId, $photoId, $content)
 {
@@ -51,6 +48,9 @@ if (isset($_POST['send']) && ($_POST['send'])) {
 
   insertCmt($conn, $userId, $photoId, $content);
 }
+// Check if photoId is set in $_GET
+$photoId = isset($_GET['photoId']) ? htmlspecialchars($_GET['photoId']) : null;
+$cmtList = showCmt($conn, $photoId);
 ?>
 <!DOCTYPE html>
 <html lang="en">
