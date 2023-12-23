@@ -46,6 +46,15 @@
   position: relative;
   list-style: none;
 }
+.icon .ti-home,
+.icon .ti-user, 
+.ti-bookmark, 
+.ti-settings
+{
+  color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
+  font-size: 25px; /* Change this to adjust the font size */
+  text-decoration: none;
+}
 .ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
@@ -59,8 +68,9 @@ li {
 }
 .hr-nav {
   width: 1200px;
-  margin-left: 40px;
-  margin-top: -10px;
+  margin-left: 50px;
+  margin-top: 10px;
+
 }
 .hr-sidebar {
   width: 35px;
@@ -186,9 +196,11 @@ h2 {
 }
 .img-col .img-fluid {
   border: #000 1px solid;
-  height: 316px;
   width: 365px;
+  height: 275px;
   object-fit: cover;
+  margin-left:70px;
+  border-radius: 20px;
 }
 
 /* Avatar */
@@ -200,8 +212,13 @@ h2 {
 .user-info {
   float: right;
   width: 30%;
+  font-family: "Akaya Kanadaka", cursive;
 }
-
+.name-info{
+  margin-bottom: 20px;
+  font-size: 35px;
+  text-align: center;
+}
 .back-btn {
   text-align: center;
 }
