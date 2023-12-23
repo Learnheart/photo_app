@@ -120,6 +120,7 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
           <i class="ti-export"></i>
         </a>
       </div>
+      <hr class="hr-nav">
     </nav>
     <main class=" container user-content">
       <!-- Display uploaded image of that user -->
@@ -163,7 +164,6 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
         ?>
       </div>
       <aside class="user-info">
-        <h3>Author</h3>
         <div class="avatar">
           <?php
           if (!empty($avatarPath)) {
@@ -177,7 +177,7 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
           }
           ?>
         </div>
-        <div>
+        <div class="name-info">
           <?php
           $sql = "SELECT firstName, lastName FROM account WHERE userId = ?";
           $stmt = mysqli_prepare($conn, $sql);

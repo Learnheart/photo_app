@@ -49,6 +49,16 @@ body {
   position: relative;
   list-style: none;
 }
+
+.icon .ti-home,
+.icon .ti-user, 
+.ti-bookmark, 
+.ti-settings
+{
+  color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
+  font-size: 25px; /* Change this to adjust the font size */
+  text-decoration: none;
+}
 .ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
