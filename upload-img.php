@@ -95,11 +95,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   }
 }
 ?>
-
-<!-- Rest of your HTML code remains unchanged -->
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -217,8 +212,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               <?php
               include "database.php";
               if ($conn) {
-                $query = "SELECT albumId, albumName FROM album";
-                $result = mysqli_query($conn, $query);
+                // Assuming $_SESSION['user'] contains the user ID
+                $userId = $_SESSION['user'];
+
+                // Modify the query to select only albums created by the current user
+                $query = "SELECT albumId, albumName FROM album WHERE userId = ?";
+                $stmt = mysqli_prepare($conn, $query);
+                mysqli_stmt_bind_param($stmt, "i", $userId);
+                mysqli_stmt_execute($stmt);
+
+                $result = mysqli_stmt_get_result($stmt);
 
                 while ($row = mysqli_fetch_assoc($result)) {
                   echo "<option value='{$row['albumId']}'>{$row['albumName']}</option>";
@@ -229,6 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }
               ?>
             </select>
+
           </div>
 
 

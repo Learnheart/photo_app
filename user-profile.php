@@ -18,6 +18,7 @@ if ($_SESSION["role"] !== "User") {
 // Get the user ID from the session
 $userId = $_SESSION["user"];
 
+// Create new album function
 // Handle the form submission or UI interaction
 if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["createAlbum"])) {
   include_once('database.php');
@@ -56,6 +57,8 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
   // If the user has a custom avatar, use it
   $avatarPath = $avatarData['avatar'];
 }
+
+
 ?>
 <?php ob_start(); ?>
 <!DOCTYPE html>
@@ -65,8 +68,10 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./css-design/profile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -101,7 +106,8 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
         <!-- search key -->
         <form class="d-flex" role="search">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search" aria-describedby="search-icon">
+            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search"
+              aria-describedby="search-icon">
             <button class="input-group-text" id="search-icon" type="submit">
               <i class="ti-search"></i>
             </button>
@@ -122,48 +128,9 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
       </div>
       <hr class="hr-nav">
     </nav>
-    <main class=" container user-content">
-      <!-- Display uploaded image of that user -->
-      <div class="upload-img ">
-        <?php
-        $userId = $_SESSION['user'];
-
-        $sql = "SELECT p.photoPath FROM photo p JOIN account a ON p.userId = a.userId WHERE p.userId = ? ORDER BY p.photoId DESC";
-        $stmt = mysqli_prepare($conn, $sql);
-        mysqli_stmt_bind_param($stmt, "i", $userId);
-        mysqli_stmt_execute($stmt);
-
-        $res = mysqli_stmt_get_result($stmt);
-
-        if (mysqli_num_rows($res) > 0) {
-          $counter = 0; // Counter to determine when to start a new row
-          while ($data = mysqli_fetch_assoc($res)) {
-            if ($counter % 2 == 0) {
-              // Start a new row for every 3 images
-              echo '<div class="row">';
-            }
-        ?>
-            <div class="col mt-3 img-col">
-
-              <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
-
-            </div>
-        <?php
-            if ($counter % 2 == 1) {
-              // Close the row after every 3 images
-              echo '</div>';
-            }
-            $counter++;
-          }
-
-          // Close the row if there are remaining images
-          if ($counter % 2 != 0) {
-            echo '</div>';
-          }
-        }
-        ?>
-      </div>
-      <aside class="user-info">
+    <main class="container user-content">
+      <!-- Contain user information -->
+      <aside id="user-info">
         <div class="avatar">
           <?php
           if (!empty($avatarPath)) {
@@ -264,19 +231,200 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
           }
           ?>
         </div>
+        <ul class="post-album">
+          <li class="post-number">
+            <?php
+            $countPost = "SELECT COUNT(photoId) as totalPosts FROM photo WHERE userId = ?";
+            $stmt = mysqli_prepare($conn, $countPost);
+            mysqli_stmt_bind_param($stmt, "i", $userId);
+            mysqli_stmt_execute($stmt);
 
+            $res = mysqli_stmt_get_result($stmt);
+            $row = mysqli_fetch_assoc($res);
+            $totalPosts = $row['totalPosts'];
+            // echo $totalPosts . ' posts';
+            ?>
+            <button onclick="enablePostDiv()">
+              <?php echo $totalPosts; ?> posts
+            </button>
+
+          </li>
+          <li class="album-number">
+            <?php
+            $countAlbum = "SELECT COUNT(albumId) as totalAlbum FROM album WHERE userId = ?";
+            $stmt = mysqli_prepare($conn, $countAlbum);
+            mysqli_stmt_bind_param($stmt, "i", $userId);
+            mysqli_stmt_execute($stmt);
+
+            $res = mysqli_stmt_get_result($stmt);
+            $row = mysqli_fetch_assoc($res);
+            $totalAlbum = $row['totalAlbum'];
+
+            // echo $totalAlbum . ' albums';
+            ?>
+            <button onclick="enableAlbumDiv()">
+              <?php echo $totalAlbum; ?> albums
+            </button>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- Create album here -->
+      <aside id="create-album" class="hidden mt-3">
         <!-- Adding new album -->
         <form method="post" action="user-profile.php">
-          <label for="albumName">Album Name:</label>
-          <input type="text" id="albumName" name="albumName" required>
-          <button type="submit" name="createAlbum">Create Album</button>
+          <div class="form-group">
+            <label for="albumName">Album Name</label> <br>
+            <input type="text" class="form-control" id="albumName" name="albumName" placeholder="Add a title" required>
+          </div>
+          <br>
+          <div class="form-group">
+            <input type="submit" name="createAlbum" class="btn btn-primary" value="Create Album">
+          </div>
         </form>
-  </div>
-  </aside>
-  </main>
-  <div class="back-btn">
-    <a href="./homepage.php">Back</a>
-  </div>
+      </aside>
+      <section id="content-container">
+        <!-- Display uploaded image of that user -->
+        <div id="upload-img">
+          <?php
+          $userId = $_SESSION['user'];
+
+          $sql = "SELECT p.photoPath, p.photoId FROM photo p JOIN account a ON p.userId = a.userId WHERE p.userId = ? ORDER BY p.photoId DESC";
+          $stmt = mysqli_prepare($conn, $sql);
+          mysqli_stmt_bind_param($stmt, "i", $userId);
+          mysqli_stmt_execute($stmt);
+
+          $res = mysqli_stmt_get_result($stmt);
+
+          if (mysqli_num_rows($res) > 0) {
+            $counter = 0; // Counter to determine when to start a new row
+            while ($data = mysqli_fetch_assoc($res)) {
+              if ($counter % 2 == 0) {
+                // Start a new row for every 3 images
+                echo '<div class="row">';
+              }
+          ?>
+          <div class="col mt-3 img-col">
+            <a href="./img-description.php?photoId=<?= $data['photoId'] ?>">
+              <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
+            </a>
+
+
+          </div>
+          <?php
+              if ($counter % 2 == 1) {
+                // Close the row after every 3 images
+                echo '</div>';
+              }
+              $counter++;
+            }
+
+            // Close the row if there are remaining images
+            if ($counter % 2 != 0) {
+              echo '</div>';
+            }
+          }
+          ?>
+        </div>
+        <div id="album-img" class="hidden">
+          <?php
+          $albumDisplay = "SELECT al.*, p.photoPath, p.photoId 
+                   FROM album al 
+                   LEFT JOIN photo p ON al.albumId = p.album AND p.userId = ?
+                   WHERE al.userId = ? AND p.photoId IS NOT NULL
+                   GROUP BY al.albumId
+                   ORDER BY al.albumId DESC";
+
+          $stmt = mysqli_prepare($conn, $albumDisplay);
+          mysqli_stmt_bind_param($stmt, "ii", $userId, $userId);
+          mysqli_stmt_execute($stmt);
+
+          $res = mysqli_stmt_get_result($stmt);
+
+          // Initialize flag to check if any album has photos
+          $hasPhotos = false;
+
+          if (mysqli_num_rows($res) > 0) {
+            $counter = 0; // Counter to determine when to start a new row
+
+            while ($data = mysqli_fetch_assoc($res)) {
+              if ($counter % 2 == 0) {
+                // Start a new row for every 2 images
+                echo '<div class="row">';
+              }
+          ?>
+          <div class="col mt-3 img-col">
+            <a href="./album-detail.php?albumId=<?= $data['albumId'] ?>">
+              <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
+            </a>
+            <?php
+                // Check if 'albumName' key exists in the result set
+                if (isset($data['albumName'])) {
+                  echo '<div class="name">';
+                  echo  $data['albumName'];
+                  echo '</div>';
+                } else {
+                  echo '<p>Album: N/A</p>';
+                }
+                ?>
+          </div>
+          <?php
+              if ($counter % 2 == 1) {
+                // Close the row after every 2 images
+                echo '</div>';
+              }
+              $counter++;
+            }
+
+            // Close the row if there are remaining images
+            if ($counter % 2 != 0) {
+              echo '</div>';
+            }
+          }
+          ?>
+        </div>
+
+      </section>
+
+    </main>
+    <script>
+    function enableCreateAlbum() {
+      var userInfoDiv = document.getElementById('user-info');
+      var createAlbDiv = document.getElementById('create-album');
+      var modifyAlbum = document.getElementById('modify-album');
+
+      // Hide the upload-img section
+      userInfoDiv.classList.add('hidden');
+      modifyAlbum.classList.add('hidden');
+
+      // Show the album-img section
+      createAlbDiv.classList.remove('hidden');
+    }
+
+    function enableAlbumDiv() {
+      var uploadImgDiv = document.getElementById('upload-img');
+      var albumImgDiv = document.getElementById('album-img');
+
+      // Hide the upload-img section
+      uploadImgDiv.classList.add('hidden');
+
+      // Show the album-img section
+      albumImgDiv.classList.remove('hidden');
+    }
+
+    function enablePostDiv() {
+      var uploadImgDiv = document.getElementById('upload-img');
+      var albumImgDiv = document.getElementById('album-img');
+
+      // Hide the upload-img section
+      uploadImgDiv.classList.remove('hidden');
+
+      // Show the album-img section
+      albumImgDiv.classList.add('hidden');
+    }
+    </script>
+
+
 </body>
 
 </html>

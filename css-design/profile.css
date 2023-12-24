@@ -47,10 +47,9 @@
   list-style: none;
 }
 .icon .ti-home,
-.icon .ti-user, 
-.ti-bookmark, 
-.ti-settings
-{
+.icon .ti-user,
+.ti-bookmark,
+.ti-settings {
   color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
   font-size: 25px; /* Change this to adjust the font size */
   text-decoration: none;
@@ -70,7 +69,6 @@ li {
   width: 1200px;
   margin-left: 50px;
   margin-top: 10px;
-
 }
 .hr-sidebar {
   width: 35px;
@@ -103,7 +101,8 @@ li {
   width: 770px;
 }
 /* User info */
-.user-info {
+#user-info,
+#create-album {
   display: inline;
   text-align: center;
 }
@@ -190,35 +189,61 @@ h2 {
 }
 
 /* Upload Image css */
-.upload-img {
+#upload-img,
+#album-img {
   max-width: 60%;
   display: inline-block;
 }
-.img-col .img-fluid {
+.img-col .img-fluid,
+#album-img .add-album {
   border: #000 1px solid;
   width: 365px;
   height: 275px;
   object-fit: cover;
-  margin-left:70px;
+  margin-left: 70px;
   border-radius: 20px;
 }
-
+.hidden {
+  pointer-events: none;
+  display: none !important;
+}
 /* Avatar */
 .avatar .img-fluid {
   border-radius: 50%;
   width: 200px;
   height: 200px;
 }
-.user-info {
+#user-info,
+#create-album {
   float: right;
   width: 30%;
   font-family: "Akaya Kanadaka", cursive;
 }
-.name-info{
+#create-album label {
+  float: left;
+}
+.name-info {
   margin-bottom: 20px;
   font-size: 35px;
   text-align: center;
 }
-.back-btn {
-  text-align: center;
+
+#album-img .add-album {
+  /* Set the same height for the add-album div */
+  border: 1px solid black;
+  height: 200px; /* Adjust the height to match other album divs */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee; /* Optional background color for visibility */
+}
+
+.post-album li {
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 30px;
+}
+.post-album button {
+  background-color: transparent;
+  border: none;
 }
