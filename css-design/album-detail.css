@@ -1,0 +1,48 @@
+/* Include the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+body {
+  font-family: Akaya Kanadaka;
+}
+.album-info {
+  margin: 0 24px 0 185px;
+  list-style-type: none;
+}
+.album-info li {
+  margin: 0;
+}
+.hidden {
+  display: none;
+}
+.alb-name button {
+  border: none;
+  background-color: transparent;
+  margin-left: 10px;
+}
+#albumNameDiv {
+  text-align: center;
+}
+#albumNameDiv input {
+  width: 373px;
+  height: 52px;
+  margin: 0 10px;
+  border-radius: 20px;
+  background: #efefef;
+  padding: 15px 11px 14px 13px;
+
+  color: #979797;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+#albumNameDiv button {
+  width: 60px;
+  height: 54px;
+  flex-shrink: 0;
+  border-radius: 15px;
+  background: #136fb8;
+  margin-top: 10px;
+  color: #fff;
+  font-size: 20px;
+}
