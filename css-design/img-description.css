@@ -35,7 +35,6 @@
   margin: 0;
 }
 
-
 .icon {
   color: rgb(208, 212, 214);
   display: flex;
@@ -49,10 +48,9 @@
 }
 
 .icon .ti-home,
-.icon .ti-user, 
-.ti-bookmark, 
-.ti-settings
-{
+.icon .ti-user,
+.ti-bookmark,
+.ti-settings {
   color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
   font-size: 25px; /* Change this to adjust the font size */
   text-decoration: none;
@@ -197,11 +195,11 @@ hr {
   border: 1px solid #e4e9f2;
   background: #fff;
   cursor: pointer;
-  
 }
 
 .nav-item:hover {
-  background-color: #e4e9f2;}
+  background-color: #e4e9f2;
+}
 
 /* Add this to your existing CSS or create a new CSS file */
 .nav-link {
@@ -212,23 +210,21 @@ hr {
   color: #555; /* Change this to the hover color you prefer */
 }
 
-
 /* Page content */
 .img-display {
   display: inline-block;
   width: 868.02px;
-  height: 482px;   
+  height: 482px;
   border-radius: 20px, 20px, 0px, 0px;
-
 }
 .col .img-fluid {
   width: 868.022px;
-  height: 482px;
+  height: auto;
   flex-shrink: 0;
 }
-.img-des{
-   background: #D9D9D952;
-  margin-left:70px;
+.img-des {
+  background: #d9d9d952;
+  margin-left: 70px;
 }
 .alb {
   border-radius: 20px;
@@ -241,55 +237,55 @@ hr {
   flex-shrink: 0;
   object-fit: cover;
   border-radius: 20px;
-  margin-left:40px;
+  margin-left: 40px;
 }
 
 .alb-user li {
   display: inline-block;
   font-family: "Akaya Kanadaka", cursive;
 }
-.ava{
-  margin-left:25px;
+.ava {
+  margin-left: 25px;
   width: 51.76px;
   height: 63px;
 }
 
-.name{
-  margin-left:5px;
-  margin-right:20px;
-  font-size:25px;
+.name {
+  margin-left: 5px;
+  margin-right: 20px;
+  font-size: 25px;
 }
-.ti-pencil{
+.ti-pencil {
   color: black;
   width: 13px;
-  height:13px;
+  height: 13px;
   text-decoration: none;
 }
-.like{
-  border:#fff;
+.like {
+  border: #fff;
   background-color: #fff;
-  color:#888;
-  margin-left:250px;
+  color: #888;
+  margin-left: 250px;
   margin-right: 80px;
 }
-.ti-heart{
+.ti-heart {
   width: 50.63px;
   height: 37.21px;
-  color:#888;
+  color: #888;
 }
-.ti-heart:hover{
+.ti-heart:hover {
   font-weight: bold;
   color: #555;
 }
-.alb-user .img-mark .ti-bookmark{
+.alb-user .img-mark .ti-bookmark {
   width: 44px;
   height: 20px;
   padding: 2px, 0px, 4px, 26.57px;
-  color:#888;
+  color: #888;
 }
-.alb-user .img-mark .ti-bookmark:hover{
+.alb-user .img-mark .ti-bookmark:hover {
   font-weight: bold;
-  color:#555
+  color: #555;
 }
 .alb-user > li > .img-fluid,
 .user-cmt > .img-fluid {
@@ -312,19 +308,27 @@ aside .img-fluid {
   height: 140px !important;
 }
 
-.caption{
-  font-size:20px;
+.hidden {
+  display: none;
+}
+.user-cmt button {
+  border: none;
+  background-color: transparent;
+}
+
+.caption {
+  font-size: 20px;
   margin-left: 70px;
 }
-.img-descrip{
-  font-size:14px;
+.img-descrip {
+  font-size: 14px;
   margin-left: 70px;
 }
-.hr-img{
+.hr-img {
   width: 739px;
   height: 2px;
 }
-.comment-box{
+.comment-box {
   width: 610px;
   height: 44px;
   border-radius: 20px;

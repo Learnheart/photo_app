@@ -26,10 +26,8 @@ if (mysqli_num_rows($res) > 0) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Image Description</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./css-design/img-description.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -64,8 +62,7 @@ if (mysqli_num_rows($res) > 0) {
         <!-- search key -->
         <form class="d-flex" role="search" action="homepage.php" method="get">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search"
-              aria-describedby="search-icon" name="searchKeyword">
+            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search" aria-describedby="search-icon" name="searchKeyword">
             <button class="input-group-text" id="search-icon" type="submit">
               <i class="ti-search"></i>
             </button>
@@ -88,37 +85,39 @@ if (mysqli_num_rows($res) > 0) {
     </nav>
     <!-- Categories -->
     <ul class="nav">
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=1">Sport</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="homepage.php?category=2">Animal</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="homepage.php?category=3">Food</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " href="homepage.php?category=4">Anime</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=5">Meme</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=6">Art</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=7">Fruit</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=8">Trending</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="homepage.php?category=9">School</a>
-      </li>
-      <!-- reload to default homepage -->
-      <li>
-        <a href="homepage.php" class="nav-link"><i class="ti-reload"></i></a>
-      </li>
+      <?php
+      // Fetch categories from the database
+      $categorySql = "SELECT * FROM category";
+      $categoryResult = mysqli_query($conn, $categorySql);
+
+      // Check if there are categories
+      if ($categoryResult && mysqli_num_rows($categoryResult) > 0) {
+        $counter = 0; // Initialize counter
+
+        while ($category = mysqli_fetch_assoc($categoryResult)) {
+          $cateID = $category['cateID'];
+          $cateName = $category['cateName'];
+
+          // Output navigation item for each category
+          echo '<li class="nav-item">';
+          echo '<a class="nav-link" href="homepage.php?category=' . $cateID . '">' . $cateName . '</a>';
+          echo '</li>';
+
+          // Increment the counter
+          $counter++;
+
+          // Check if the counter is a multiple of 9
+          if ($counter % 9 == 0) {
+            // Close the current ul and start a new one
+            echo '</ul>';
+            echo '<ul class="nav">';
+          }
+        }
+
+        // Free the result set
+        mysqli_free_result($categoryResult);
+      }
+      ?>
     </ul>
     <hr class="hr-nav">
     <!-- Page content -->
@@ -139,7 +138,20 @@ if (mysqli_num_rows($res) > 0) {
             <?= $data['firstName'] . ' ' . $data['lastName']; ?>
           </li>
           <li class="edit-info">
-            <a href="./edit-img.php?edit=<?= $data['photoId'] ?>"><i class="ti-pencil"></i></a>
+            <?php
+            $uploadedUserId = $data['userId'];
+            if (isset($_SESSION['user'])) {
+              $currentUserId = $_SESSION['user'];
+
+              // Check if the current user is the one who uploaded the photo
+              if ($currentUserId == $uploadedUserId) {
+                // Display the "Edit" button
+                echo '<li class="edit-info">';
+                echo '<a href="./edit-img.php?edit=' . $data['photoId'] . '"><i class="ti-pencil"></i></a>';
+                echo '</li>';
+              }
+            }
+            ?>
           </li>
 
           <li class="like">
@@ -162,8 +174,7 @@ if (mysqli_num_rows($res) > 0) {
         <hr class="hr-img">
         <!-- Comment -->
         <div class="comment-box">
-          <iframe src="comment.php?photoId=<?= $_GET['photoId'] ?>" width="100%" height="400px"
-            frameborder="0"></iframe>
+          <iframe src="comment.php?photoId=<?= $_GET['photoId'] ?>" width="100%" height="400px" frameborder="0"></iframe>
         </div>
       </div>
     </div>
@@ -189,22 +200,22 @@ if (mysqli_num_rows($res) > 0) {
                 echo '<div class="row">';
               }
           ?>
-          <div class="col mt-3 img-col">
-            <?php
+              <div class="col mt-3 img-col">
+                <?php
                 $relatedImagePath = "uploads/" . $relatedData['photoPath'];
                 if (file_exists($relatedImagePath)) {
                 ?>
-            <a href="./img-description.php?photoId=<?= $relatedData['photoId'] ?>" class="detailed">
-              <img src="<?= $relatedImagePath ?>" class="img-fluid" alt="Related Image">
-            </a>
-            <?php
+                  <a href="./img-description.php?photoId=<?= $relatedData['photoId'] ?>" class="detailed">
+                    <img src="<?= $relatedImagePath ?>" class="img-fluid" alt="Related Image">
+                  </a>
+                <?php
                 } else {
                 ?>
-            <p>Image not found: <?= $relatedImagePath ?></p>
-            <?php
+                  <p>Image not found: <?= $relatedImagePath ?></p>
+                <?php
                 }
                 ?>
-          </div>
+              </div>
           <?php
               if ($counter % 2 == 1) {
                 // Close the row after every 3 images

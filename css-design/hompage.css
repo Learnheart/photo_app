@@ -47,10 +47,9 @@
   list-style: none;
 }
 .icon .ti-home,
-.icon .ti-user, 
-.ti-bookmark, 
-.ti-settings
-{
+.icon .ti-user,
+.ti-bookmark,
+.ti-settings {
   color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
   font-size: 25px; /* Change this to adjust the font size */
   text-decoration: none;
@@ -61,7 +60,7 @@
 .ti-bookmark:hover,
 .ti-settings:hover {
   font-weight: bold;
-  color: white; 
+  color: white;
 }
 li {
   margin-bottom: 25px;
@@ -184,11 +183,11 @@ h2 {
   border: 1px solid #e4e9f2;
   background: #fff;
   cursor: pointer;
-  
 }
 
 .nav-item:hover {
-  background-color: #e4e9f2;}
+  background-color: #e4e9f2;
+}
 
 /* Add this to your existing CSS or create a new CSS file */
 .nav-link {
@@ -211,44 +210,44 @@ h2 {
   flex-shrink: 0;
   object-fit: cover;
   border-radius: 20px;
-  margin-left:40px;
+  margin-left: 40px;
 }
 
 .alb-user li {
   display: inline-block;
   font-family: "Akaya Kanadaka", cursive;
 }
-.ava{
-  margin-left:25px;
+.ava {
+  margin-left: 25px;
 }
-.name{
-  margin-left:5px;
+.name {
+  margin-left: 5px;
   margin-right: 90px;
-  font-size:22px;
+  font-size: 22px;
 }
-.like{
-  border:#fff;
+.like {
+  border: #fff;
   background-color: #fff;
-  color:#888;
+  color: #888;
 }
-.ti-heart{
+.ti-heart {
   width: 53px;
   height: 22px;
-  color:#888;
+  color: #888;
 }
-.ti-heart:hover{
+.ti-heart:hover {
   font-weight: bold;
   color: #555;
 }
-.alb-user .img-mark .ti-bookmark{
+.alb-user .img-mark .ti-bookmark {
   width: 44px;
   height: 20px;
   padding: 2px, 0px, 4px, 26.57px;
-  color:#888;
+  color: #888;
 }
-.alb-user .img-mark .ti-bookmark:hover{
+.alb-user .img-mark .ti-bookmark:hover {
   font-weight: bold;
-  color:#555
+  color: #555;
 }
 .alb-user > li > .img-fluid {
   width: 40px;

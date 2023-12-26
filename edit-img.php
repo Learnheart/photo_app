@@ -223,21 +223,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>We recommend using a high-quality file less than 20MB</p>
           </label> <br>
         </div>
+        <aside class="desccription">
 
-
-        <aside class="description">
-          <div class="form-group">
-            <input type="text" class="form-upload" name="caption" id="caption" placeholder="Add a title"
-              value="<?= htmlspecialchars($existingCaption) ?>">
-          </div> 
-          <div class="form-group">
-            <input type="text" class="form-upload" name="description" id="description"
-              placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
-          </div>
-          <div class="form-group">
-            <select name="category" id="category" class="form-upload" required>
-              <option value="" selected disabled>Select a category</option>
-              <?php
+          <aside class="description">
+            <div class="form-group">
+              <input type="text" class="form-upload" name="caption" id="caption" placeholder="Add a title"
+                value="<?= htmlspecialchars($existingCaption) ?>">
+            </div>
+            <div class="form-group">
+              <input type="text" class="form-upload" name="description" id="description"
+                placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
+            </div> <br>
+            <div class="form-group">
+              <label for="category">Category:</label>
+              <select name="category" id="category" class="form-control" required>
+                <?php
               include "database.php";
               if ($conn) {
                 $query = "SELECT cateID, cateName FROM category";
@@ -251,14 +251,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_close($conn); // Close the database connection
               }
               ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <select name="album" id="album" class="form-upload">
-              <!-- Populate album options -->
-              <option value="" selected disabled>Select a Album</option>
-              <option value="NULL">No Album</option>
-              <?php
+              </select>
+            </div> <br>
+            <div class="form-group">
+              <label for="album">Album:</label>
+              <select name="album" id="album" class="form-control">
+                <!-- Populate album options -->
+                <option value="" selected disabled>Select a Album</option>
+                <option value="NULL">No Album</option>
+                <?php
               include "database.php";
               if ($conn) {
                 $query = "SELECT albumId, albumName FROM album WHERE userId = ?";
@@ -275,25 +276,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 mysqli_close($conn); // Close the database connection
               }
               ?>
-            </select>
-          </div>
-          <div class="form-group">
-            <input type="submit" value="Update" name="update-img" class="btn btn-primary">
-          </div>
-        </aside>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="submit" value="Update" name="update-img" class="btn btn-primary">
+            </div>
+          </aside>
       </div>
     </form>
 
- <!-- Form for deleting image and Back button to homepage -->
-<div class="container">
-  <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="delete" class="d-inline-block">
-    <div class="form-group">
-      <input type="submit" value="Delete" name="delete-img" class="btn btn-danger">
-    </div>
-  </form>
+    <!-- Form for deleting image and Back button to homepage -->
+    <div class="container">
+      <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="delete" class="d-inline-block">
+        <div class="form-group">
+          <input type="submit" value="Delete" name="delete-img" class="btn btn-danger">
+        </div>
+      </form>
 
-  <a href="./homepage.php" class="btn btn-warning d-inline-block">Back to Homepage</a>
-</div>
+      <a href="./homepage.php" class="btn btn-warning d-inline-block">Back to Homepage</a>
+    </div>
 </body>
 
 </html>

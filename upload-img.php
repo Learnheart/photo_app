@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
   // Ensure $_SESSION['user'] is properly sanitized to prevent SQL injection
   $sessionId = mysqli_real_escape_string($conn, $_SESSION['user']);
-
+  $album = isset($_POST['album']) ? $_POST['album'] : null;
   // Use a prepared statement to fetch the userId
   $sql = "SELECT userId FROM account WHERE userId = ?";
   $stmt = mysqli_prepare($conn, $sql);
@@ -61,6 +61,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           $img_upload_path = 'uploads/' . $new_img_name;
           move_uploaded_file($tmp_name, $img_upload_path);
 
+          $album = isset($_POST['album']) ? $_POST['album'] : NULL;
           // Insert into database using prepared statement
           $sql = "INSERT INTO photo (userId, caption, description, category, photoPath, album) VALUES (?, ?, ?, ?, ?, ?)";
           $stmt = mysqli_prepare($conn, $sql);
@@ -191,6 +192,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="form-group">
             <select name="category" id="category" class="form-upload" required>
+              <option value="" selected disabled>Select a category</option>
               <?php
               include "database.php";
               if ($conn) {
@@ -207,8 +209,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
+<<<<<<< Updated upstream
 
             <select class="form-upload" name="album" id="album">
+=======
+            <select class="form-control" name="album" id="album">
+              <option value="" selected disabled>Select a album</option>
+>>>>>>> Stashed changes
               <?php
               include "database.php";
               if ($conn) {
@@ -226,8 +233,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 while ($row = mysqli_fetch_assoc($result)) {
                   echo "<option value='{$row['albumId']}'>{$row['albumName']}</option>";
                 }
-
-                $album = isset($_POST['album']) ? $_POST['album'] : null;
                 mysqli_close($conn); // Close the database connection
               }
               ?>

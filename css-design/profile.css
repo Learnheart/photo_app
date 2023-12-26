@@ -101,6 +101,9 @@ li {
   width: 770px;
 }
 /* User info */
+h2 {
+  float: left;
+}
 #user-info,
 #create-album {
   display: inline;
@@ -218,7 +221,27 @@ h2 {
   float: right;
   width: 30%;
   font-family: "Akaya Kanadaka", cursive;
+  position: relative;
 }
+#user-info .edit-icon {
+  color: #2e4b9c;
+  position: absolute;
+  z-index: 2;
+  top: 145px;
+  right: 122px;
+  font-size: 24px;
+  background-color: #fff;
+  border: 1px solid #2e4b9c;
+  border-radius: 20px;
+  width: 36px;
+  height: 36px;
+  text-decoration: none;
+}
+#user-info .edit-icon:hover {
+  cursor: pointer;
+  background-color: rgb(208, 200, 200);
+}
+
 #create-album label {
   float: left;
 }
