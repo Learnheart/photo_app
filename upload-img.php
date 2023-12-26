@@ -208,7 +208,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           </div>
           <div class="form-group">
 
-            <select class="form-control" name="album" id="album">
+            <select class="form-upload" name="album" id="album">
               <?php
               include "database.php";
               if ($conn) {

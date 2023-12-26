@@ -129,7 +129,7 @@ if (mysqli_num_rows($res) > 0) {
             <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
           </div>
         </div>
-
+        <div class="img-des">
         <!-- Tracking user upload -->
         <ul class="alb-user">
           <li class="ava">
@@ -159,13 +159,14 @@ if (mysqli_num_rows($res) > 0) {
             <?= $data['description']; ?>
           </p>
         </div>
-        <hr>
+        <hr class="hr-img">
         <!-- Comment -->
         <div class="comment-box">
           <iframe src="comment.php?photoId=<?= $_GET['photoId'] ?>" width="100%" height="400px"
             frameborder="0"></iframe>
         </div>
       </div>
+    </div>
       <aside>
         <h2>Most related</h2>
         <div class="related-img">
