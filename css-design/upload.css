@@ -254,11 +254,11 @@ hr {
   justify-content: center; /* Căn giữa theo chiều ngang */
 }
 
-.ti-export {
+.file .icon .ti-export {
   margin-bottom: 20px;
-  transform: scale(2); /* Tăng kích thước biểu tượng */
-  font-size: 30px; /* Kích thước của biểu tượng */
-  margin-bottom: 10px; /* Khoảng cách giữa biểu tượng và văn bản */
+  transform: scale(2); /* Increase the size of the icon */
+  font-size: 30px; /* Keep the font size (optional) */
+  margin-bottom: 10px; /* Adjust the margin if needed */
 }
 h5,
 p {

@@ -11,6 +11,7 @@ if (!isset($_SESSION["user"])) {
 }
 
 // Ensure $_SESSION['user'] is properly sanitized to prevent SQL injection
+$userId = $_SESSION['user'];
 $sessionId = mysqli_real_escape_string($conn, $_SESSION['user']);
 
 // Use a prepared statement to fetch the userId
@@ -84,6 +85,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $updateSql = "UPDATE photo SET caption = ?, description = ?, category = ?, album = ? WHERE photoId = ?";
     $updateStmt = mysqli_prepare($conn, $updateSql);
 
+    $album = ($album === "NULL") ? null : $album;
     // Bind parameters
     mysqli_stmt_bind_param($updateStmt, "ssssi", $caption, $description, $category, $album, $editPhotoId);
 
@@ -138,11 +140,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Edit Image</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./css-design/upload.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -177,7 +183,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- search key -->
         <form class="d-flex" role="search">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search" aria-describedby="search-icon">
+            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search"
+              aria-describedby="search-icon">
             <button class="input-group-text" id="search-icon" type="submit">
               <i class="ti-search"></i>
             </button>
@@ -199,9 +206,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </nav>
     <hr class="hr-nav">
+
     <!-- Form for editing image information -->
     <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="edit" class="container">
-
       <div class="upload-container">
         <!-- File div -->
         <div class="file">
@@ -216,17 +223,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <p>We recommend using a high-quality file less than 20MB</p>
           </label> <br>
         </div>
-        <aside class="desccription">
 
+
+        <aside class="description">
           <div class="form-group">
-            <input type="text" class="form-control" name="caption" id="caption" placeholder="Add a title" value="<?= htmlspecialchars($existingCaption) ?>">
-          </div> <br>
+            <input type="text" class="form-upload" name="caption" id="caption" placeholder="Add a title"
+              value="<?= htmlspecialchars($existingCaption) ?>">
+          </div> 
           <div class="form-group">
-            <input type="text" class="form-control" name="description" id="description" placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
+            <input type="text" class="form-upload" name="description" id="description"
+              placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
           </div>
           <div class="form-group">
-            <label for="category">Category:</label>
-            <select name="category" id="category" class="form-control" required>
+            <select name="category" id="category" class="form-upload" required>
+              <option value="" selected disabled>Select a category</option>
               <?php
               include "database.php";
               if ($conn) {
@@ -244,14 +254,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
-            <label for="album">Album:</label>
-            <select name="album" id="album" class="form-control">
+            <select name="album" id="album" class="form-upload">
               <!-- Populate album options -->
+              <option value="" selected disabled>Select a Album</option>
+              <option value="NULL">No Album</option>
               <?php
               include "database.php";
               if ($conn) {
-                $query = "SELECT albumId, albumName FROM album";
-                $result = mysqli_query($conn, $query);
+                $query = "SELECT albumId, albumName FROM album WHERE userId = ?";
+                $stmt = mysqli_prepare($conn, $query);
+                mysqli_stmt_bind_param($stmt, "i", $userId);
+                mysqli_stmt_execute($stmt);
+                $result = mysqli_stmt_get_result($stmt);
 
                 while ($row = mysqli_fetch_assoc($result)) {
                   $selected = ($row['albumId'] == $existingAlbum) ? "selected" : "";
@@ -270,20 +284,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </div>
     </form>
 
-    <!-- Form for deleting image -->
-    <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="delete" class="container">
-      <div class="form-group">
-        <input type="submit" value="Delete" name="delete-img" class="btn btn-danger">
-        <!-- Correct the name attribute -->
-      </div>
-    </form>
-
-
-
-    <!-- Back button to homepage -->
-    <div class="container">
-      <a href="./homepage.php" class="btn btn-warning">Back to Homepage</a>
+ <!-- Form for deleting image and Back button to homepage -->
+<div class="container">
+  <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="delete" class="d-inline-block">
+    <div class="form-group">
+      <input type="submit" value="Delete" name="delete-img" class="btn btn-danger">
     </div>
+  </form>
+
+  <a href="./homepage.php" class="btn btn-warning d-inline-block">Back to Homepage</a>
+</div>
 </body>
 
 </html>
