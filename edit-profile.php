@@ -93,9 +93,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     exit();
   }
 }
-
-
-
 ?>
 
 <!DOCTYPE html>
@@ -122,7 +119,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </div>
     <div id="space"></div>
     <ul class="icon">
-
       <li>
         <a href="./homepage.php" class="ti-home"></a>
       </li>

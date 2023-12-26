@@ -42,6 +42,10 @@ li {
   margin-bottom: 25px;
   font-size: 25px;
 }
+li > a {
+  color: rgb(208, 212, 214);
+  text-decoration: none;
+}
 .logo-container {
   width: 50px;
   height: 53px;
@@ -136,6 +140,11 @@ hr {
 /* Edit profile */
 .avatar {
   text-align: center;
+}
+.img-fluid {
+  border-radius: 50%;
+  width: 200px;
+  height: 200px;
 }
 
 .hidden {

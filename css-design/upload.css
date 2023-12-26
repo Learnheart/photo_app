@@ -51,10 +51,9 @@ body {
 }
 
 .icon .ti-home,
-.icon .ti-user, 
-.ti-bookmark, 
-.ti-settings
-{
+.icon .ti-user,
+.ti-bookmark,
+.ti-settings {
   color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
   font-size: 25px; /* Change this to adjust the font size */
   text-decoration: none;
@@ -163,6 +162,9 @@ h2 {
 .export-icon:hover {
   background: #536e9f;
   color: #fff;
+}
+.export-icon .ti-export {
+  font-size: 18px;
 }
 
 hr {

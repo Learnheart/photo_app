@@ -3,6 +3,7 @@
 
 #description {
   margin: 0 24px 0 124px;
+  font-family: Akaya Kanadaka;
 }
 /* Side bar design */
 #side-bar {
@@ -69,7 +70,7 @@ li {
 .hr-nav {
   width: 1200px;
   margin-left: 40px;
-  margin-top: -10px;
+  margin-top: 10px;
 }
 .hr-sidebar {
   width: 35px;
@@ -241,8 +242,12 @@ hr {
 }
 
 .alb-user li {
+  padding: 10px 0 0 0;
   display: inline-block;
   font-family: "Akaya Kanadaka", cursive;
+}
+.alb-user a {
+  text-decoration: none;
 }
 .ava {
   margin-left: 25px;
@@ -267,6 +272,7 @@ hr {
   color: #888;
   margin-left: 250px;
   margin-right: 80px;
+  background-color: transparent;
 }
 .ti-heart {
   width: 50.63px;
@@ -318,11 +324,11 @@ aside .img-fluid {
 
 .caption {
   font-size: 20px;
-  margin-left: 70px;
+  margin-left: 60px;
 }
 .img-descrip {
   font-size: 14px;
-  margin-left: 70px;
+  margin-left: 80px;
 }
 .hr-img {
   width: 739px;
