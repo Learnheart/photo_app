@@ -196,7 +196,7 @@ h2 {
 }
 .img-col .img-fluid,
 #album-img .add-album {
-  border: #000 1px solid;
+  border: transparent 1px solid;
   width: 365px;
   height: 275px;
   object-fit: cover;
@@ -230,7 +230,7 @@ h2 {
 
 #album-img .add-album {
   /* Set the same height for the add-album div */
-  border: 1px solid black;
+  border: 1px solid transparent;
   height: 200px; /* Adjust the height to match other album divs */
   display: flex;
   align-items: center;

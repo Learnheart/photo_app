@@ -35,6 +35,7 @@
   margin: 0;
 }
 
+
 .icon {
   color: rgb(208, 212, 214);
   display: flex;
@@ -45,6 +46,16 @@
   float: left;
   position: relative;
   list-style: none;
+}
+
+.icon .ti-home,
+.icon .ti-user, 
+.ti-bookmark, 
+.ti-settings
+{
+  color: rgb(208, 212, 214); /* Change this to the gray color you prefer */
+  font-size: 25px; /* Change this to adjust the font size */
+  text-decoration: none;
 }
 .ti-home:hover,
 .ti-user:hover,
@@ -70,10 +81,17 @@ li {
 /* Other styles... */
 
 /* Search key */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  width: 1500px;
+}
+
 .input-group {
   border-radius: 15px;
-  border: 1px solid #e4e9f2;
+  border: 1px solid #a4a7ac;
   margin-left: 20px;
+  font-size: 20px;
 }
 .input-group-text {
   border-radius: 15px;
@@ -108,7 +126,6 @@ h2 {
   width: auto;
   height: 38px;
   flex-shrink: 0;
-
   color: #000;
   font-family: "Akaya Kanadaka", cursive;
   font-size: 32px;
@@ -132,6 +149,7 @@ h2 {
   left: 1115px;
   cursor: pointer;
 }
+
 .bell-icon {
   margin-left: 50px;
   margin-right: 20px;
@@ -146,9 +164,14 @@ h2 {
   color: white !important;
   text-decoration: none;
 }
+
 .export-icon:hover {
   background: #536e9f;
   color: #fff;
+}
+
+hr {
+  width: 100%;
 }
 
 /* Category bar */
@@ -169,33 +192,104 @@ h2 {
   font-size: 20px;
   text-align: center;
   flex-shrink: 0;
-  margin-right: 35px;
+  margin-right: 32px;
   border-radius: 25px;
   border: 1px solid #e4e9f2;
   background: #fff;
   cursor: pointer;
+  
 }
 
 .nav-item:hover {
-  background-color: #e4e9f2;
+  background-color: #e4e9f2;}
+
+/* Add this to your existing CSS or create a new CSS file */
+.nav-link {
+  color: #888; /* Change this to the gray color you prefer */
 }
+
+.nav-link:hover {
+  color: #555; /* Change this to the hover color you prefer */
+}
+
+
 /* Page content */
 .img-display {
-  width: 60%;
   display: inline-block;
+  width: 868.02px;
+  height: 482px;   
+  border-radius: 20px, 20px, 0px, 0px;
+
 }
 .col .img-fluid {
   width: 868.022px;
   height: 482px;
   flex-shrink: 0;
 }
-
+.img-des{
+   background: #D9D9D952;
+  margin-left:70px;
+}
 .alb {
   border-radius: 20px;
+  font-family: "Akaya Kanadaka", cursive;
+}
+.alb img {
+  border: 1px solid transparent;
+  width: 365px;
+  height: 275px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-left:40px;
 }
 
 .alb-user li {
   display: inline-block;
+  font-family: "Akaya Kanadaka", cursive;
+}
+.ava{
+  margin-left:25px;
+  width: 51.76px;
+  height: 63px;
+}
+
+.name{
+  margin-left:5px;
+  margin-right:20px;
+  font-size:25px;
+}
+.ti-pencil{
+  color: black;
+  width: 13px;
+  height:13px;
+  text-decoration: none;
+}
+.like{
+  border:#fff;
+  background-color: #fff;
+  color:#888;
+  margin-left:250px;
+  margin-right: 80px;
+}
+.ti-heart{
+  width: 50.63px;
+  height: 37.21px;
+  color:#888;
+}
+.ti-heart:hover{
+  font-weight: bold;
+  color: #555;
+}
+.alb-user .img-mark .ti-bookmark{
+  width: 44px;
+  height: 20px;
+  padding: 2px, 0px, 4px, 26.57px;
+  color:#888;
+}
+.alb-user .img-mark .ti-bookmark:hover{
+  font-weight: bold;
+  color:#555
 }
 .alb-user > li > .img-fluid,
 .user-cmt > .img-fluid {
@@ -216,4 +310,22 @@ aside {
 aside .img-fluid {
   width: 195px !important;
   height: 140px !important;
+}
+
+.caption{
+  font-size:20px;
+  margin-left: 70px;
+}
+.img-descrip{
+  font-size:14px;
+  margin-left: 70px;
+}
+.hr-img{
+  width: 739px;
+  height: 2px;
+}
+.comment-box{
+  width: 610px;
+  height: 44px;
+  border-radius: 20px;
 }
