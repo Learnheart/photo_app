@@ -14,7 +14,7 @@ if ($_SESSION["role"] !== "Admin") {
   exit();
 }
 include_once "../database.php";
-$sql = "SELECT * from account";
+$sql = "SELECT * from account WHERE role = 'User'";
 $res = mysqli_query($conn, $sql);
 // $userId = $data['userId'];
 
@@ -138,7 +138,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           while ($data = mysqli_fetch_assoc($res)) {
             // Fetch user's avatar
             $userId = $data['userId'];
-            $sqlAvatar = "SELECT avatar FROM account WHERE userId = ? ORDER BY date DESC";
+            $sqlAvatar = "SELECT avatar FROM account WHERE role = 'User' AND userId = ? ORDER BY date DESC";
             $stmtAvatar = mysqli_prepare($conn, $sqlAvatar);
             mysqli_stmt_bind_param($stmtAvatar, "i", $userId);
             mysqli_stmt_execute($stmtAvatar);
