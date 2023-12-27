@@ -68,9 +68,12 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/profile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
@@ -92,7 +95,10 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
       </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
-      <li class="ti-settings"></li>
+      <li>
+        <a tabindex="0" class="ti-settings" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+          data-bs-title="Logout" data-bs-content=""></a>
+      </li>
     </ul>
   </div>
   <!-- Webpage content -->
@@ -102,7 +108,8 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
       <!-- search key -->
       <form class="d-flex" role="search">
         <div class="input-group">
-          <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search" aria-describedby="search-icon">
+          <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search"
+            aria-describedby="search-icon">
           <button class="input-group-text" id="search-icon" type="submit">
             <i class="ti-search"></i>
           </button>
@@ -307,13 +314,13 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
               echo '<div class="row">';
             }
         ?>
-            <div class="col mt-3 img-col">
-              <a href="./img-description.php?photoId=<?= $data['photoId'] ?>">
-                <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
-              </a>
+        <div class="col mt-3 img-col">
+          <a href="./img-description.php?photoId=<?= $data['photoId'] ?>">
+            <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
+          </a>
 
 
-            </div>
+        </div>
         <?php
             if ($counter % 2 == 1) {
               // Close the row after every 3 images
@@ -356,9 +363,9 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
               echo '<div class="row">';
             }
         ?>
-            <div class="col mt-3 img-col">
-              <a href="./album-detail.php?albumId=<?= $data['albumId'] ?>">
-                <?php
+        <div class="col mt-3 img-col">
+          <a href="./album-detail.php?albumId=<?= $data['albumId'] ?>">
+            <?php
                 if ($data['photoId'] !== null) {
                   // If there is a cover photo, display it
                   echo '<img src="uploads/' . $data['photoPath'] . '" class="img-fluid" alt="Image">';
@@ -367,11 +374,11 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
                   echo '<img src="uploads/placeholder.png" class="img-fluid" alt="Image">';
                 }
                 ?>
-              </a>
-              <div class="name">
-                <?= isset($data['albumName']) ? $data['albumName'] : 'N/A'; ?>
-              </div>
-            </div>
+          </a>
+          <div class="name">
+            <?= isset($data['albumName']) ? $data['albumName'] : 'N/A'; ?>
+          </div>
+        </div>
         <?php
             if ($counter % 2 == 1) {
               // Close the row after every 2 albums
@@ -396,38 +403,47 @@ if ($res && $avatarData = mysqli_fetch_assoc($res)) {
 
   </main>
   <script>
-    function enableCreateAlbum() {
-      var userInfoDiv = document.getElementById('user-info');
-      var createAlbDiv = document.getElementById('create-album');
+  function enableCreateAlbum() {
+    var userInfoDiv = document.getElementById('user-info');
+    var createAlbDiv = document.getElementById('create-album');
 
-      // Hide the upload-img section
-      userInfoDiv.classList.add('hidden');
+    // Hide the upload-img section
+    userInfoDiv.classList.add('hidden');
 
-      // Show the album-img section
-      createAlbDiv.classList.remove('hidden');
-    }
+    // Show the album-img section
+    createAlbDiv.classList.remove('hidden');
+  }
 
-    function enableAlbumDiv() {
-      var uploadImgDiv = document.getElementById('upload-img');
-      var albumImgDiv = document.getElementById('album-img');
+  function enableAlbumDiv() {
+    var uploadImgDiv = document.getElementById('upload-img');
+    var albumImgDiv = document.getElementById('album-img');
 
-      // Hide the upload-img section
-      uploadImgDiv.classList.add('hidden');
+    // Hide the upload-img section
+    uploadImgDiv.classList.add('hidden');
 
-      // Show the album-img section
-      albumImgDiv.classList.remove('hidden');
-    }
+    // Show the album-img section
+    albumImgDiv.classList.remove('hidden');
+  }
 
-    function enablePostDiv() {
-      var uploadImgDiv = document.getElementById('upload-img');
-      var albumImgDiv = document.getElementById('album-img');
+  function enablePostDiv() {
+    var uploadImgDiv = document.getElementById('upload-img');
+    var albumImgDiv = document.getElementById('album-img');
 
-      // Hide the upload-img section
-      uploadImgDiv.classList.remove('hidden');
+    // Hide the upload-img section
+    uploadImgDiv.classList.remove('hidden');
 
-      // Show the album-img section
-      albumImgDiv.classList.add('hidden');
-    }
+    // Show the album-img section
+    albumImgDiv.classList.add('hidden');
+  }
+  // Initialize popover
+  $(function() {
+    $('[data-bs-toggle="popover"]').popover();
+  });
+
+  // Handle click on popover title
+  $(document).on('click', '.popover-header', function() {
+    window.location.href = 'logout.php';
+  });
   </script>
 
 

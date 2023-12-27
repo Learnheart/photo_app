@@ -57,13 +57,14 @@ $res = mysqli_query($conn, $sql);
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <script src="https://use.fontawesome.com/fe459689b4.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
 </head>
 
 <body>
   <!-- Vertical side bar -->
   <div id="side-bar">
     <div class="logo-container">
-      <img src="./img/circle.webp" alt="" class="logo">
+      <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
     <div id="space"></div>
     <ul class="icon">
@@ -75,7 +76,9 @@ $res = mysqli_query($conn, $sql);
       </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
-      <li class="ti-settings"></li>
+      <li>
+        <a tabindex="0" class="ti-settings" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Logout" data-bs-content=""></a>
+      </li>
     </ul>
   </div>
   <!-- Webpage content -->
@@ -220,14 +223,21 @@ $res = mysqli_query($conn, $sql);
         ?>
       </div>
     </main>
-
-    <!-- Pagination -->
-    <!-- Footer -->
-    <!-- Logout button -->
-    <div class="container">
-      <a href="logout.php" class="btn btn-warning">Logout</a>
-    </div>
   </div>
+  <!-- <div id="logout" class="container">
+    <a href="logout.php" class="btn btn-warning">Logout</a>
+  </div> -->
+  <script>
+    // Initialize popover
+    $(function() {
+      $('[data-bs-toggle="popover"]').popover();
+    });
+
+    // Handle click on popover title
+    $(document).on('click', '.popover-header', function() {
+      window.location.href = 'logout.php';
+    });
+  </script>
 
 </body>
 

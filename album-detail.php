@@ -71,11 +71,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/profile.css">
   <link rel="stylesheet" href="./css-design/album-detail.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -85,7 +84,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Vertical side bar -->
   <div id="side-bar">
     <div class="logo-container">
-      <img src="./img/circle.webp" alt="" class="logo">
+      <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
     <div id="space"></div>
     <ul class="icon">
@@ -98,7 +97,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
-      <li class="ti-settings"></li>
+      <li>
+        <a tabindex="0" class="ti-settings" role="button" data-bs-toggle="popover" data-bs-trigger="focus" data-bs-title="Logout" data-bs-content=""></a>
+      </li>
     </ul>
   </div>
   <!-- Webpage content -->
@@ -109,8 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <!-- search key -->
         <form class="d-flex" role="search">
           <div class="input-group">
-            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search"
-              aria-describedby="search-icon">
+            <input type="text" class="form-control" placeholder="Search keyword" aria-label="Search" aria-describedby="search-icon">
             <button class="input-group-text" id="search-icon" type="submit">
               <i class="ti-search"></i>
             </button>
@@ -241,13 +241,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               echo '<div class="row">';
             }
         ?>
-        <div class="col mt-3 img-col">
-          <a href="./img-description.php?photoId=<?= $data['photoId'] ?>">
-            <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
-          </a>
+            <div class="col mt-3 img-col">
+              <a href="./img-description.php?photoId=<?= $data['photoId'] ?>">
+                <img src="uploads/<?= $data['photoPath'] ?>" class="img-fluid" alt="Image">
+              </a>
 
 
-        </div>
+            </div>
         <?php
             if ($counter % 3 == 2) {
               // Close the row after every 3 images
@@ -267,20 +267,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </div>
 
   <script>
-  var display = 0;
+    var display = 0;
 
-  function updateAlbum() {
-    var updatediv = document.getElementById('albumNameDiv');
-    if (display == 1) {
-      updatediv.classList.remove('hidden');
-      display = 0;
-    } else {
-      updatediv.classList.add('hidden');
-      display = 1
+    function updateAlbum() {
+      var updatediv = document.getElementById('albumNameDiv');
+      if (display == 1) {
+        updatediv.classList.remove('hidden');
+        display = 0;
+      } else {
+        updatediv.classList.add('hidden');
+        display = 1
+      }
+      // Show the album-img section
+      // updatediv.classList.remove('hidden');
     }
-    // Show the album-img section
-    // updatediv.classList.remove('hidden');
-  }
+    // Initialize popover
+    $(function() {
+      $('[data-bs-toggle="popover"]').popover();
+    });
+
+    // Handle click on popover title
+    $(document).on('click', '.popover-header', function() {
+      window.location.href = 'logout.php';
+    });
   </script>
 </body>
 

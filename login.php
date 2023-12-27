@@ -15,7 +15,8 @@ if (isset($_SESSION["user"])) {
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Login Form</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
   <link rel="stylesheet" href="./css-design/registration.css">
   <link rel="stylesheet" href="./css-design/registration_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
@@ -54,8 +55,8 @@ if (isset($_SESSION["user"])) {
       $user = mysqli_fetch_array($result, MYSQLI_ASSOC);
 
       // Debugging statements
-      echo "Entered Password: " . $password . "<br>";
-      echo "Stored Password Hash: " . $user["password"] . "<br>";
+      // echo "Entered Password: " . $password . "<br>";
+      // echo "Stored Password Hash: " . $user["password"] . "<br>";
 
       if ($user) {
         $storedPasswordHash = $user["password"];

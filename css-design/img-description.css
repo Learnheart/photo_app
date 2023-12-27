@@ -339,3 +339,25 @@ aside .img-fluid {
   height: 44px;
   border-radius: 20px;
 }
+
+/* popover button */
+.popover {
+  max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+.popover-header {
+  background-color: #ffc107; /* Change the background color */
+  color: #212529; /* Change the text color */
+  border-bottom: 1px solid #dee2e6; /* Add a border at the bottom */
+  cursor: pointer;
+}
+.popover-header:hover {
+  background-color: #f9da87;
+}
+
+.popover-body {
+  padding: 10px;
+}
+.popover:before {
+  border-bottom-color: #ffc107; /* Match the header background color */
+}

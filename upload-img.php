@@ -145,11 +145,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/upload.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
@@ -158,7 +155,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <!-- Vertical side bar -->
   <div id="side-bar">
     <div class="logo-container">
-      <img src="./img/circle.webp" alt="" class="logo">
+      <img src="./img/circle.webp" alt="Logo" class="logo">
     </div>
     <div id="space"></div>
     <ul class="icon">
@@ -171,7 +168,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
-      <li class="ti-settings"></li>
+      <li>
+        <a tabindex="0" class="ti-settings" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+          data-bs-title="Logout" data-bs-content=""></a>
+      </li>
     </ul>
   </div>
   <!-- Webpage content -->
@@ -289,6 +289,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <input type="submit" value="Delete" name="delete-img" class="btn btn-danger mt-3 mb-5">
       </div>
     </form>
+    <script>
+    // Initialize popover
+    $(function() {
+      $('[data-bs-toggle="popover"]').popover();
+    });
+
+    // Handle click on popover title
+    $(document).on('click', '.popover-header', function() {
+      window.location.href = 'logout.php';
+    });
+    </script>
 </body>
 
 </html>
