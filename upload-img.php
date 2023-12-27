@@ -220,21 +220,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="file" name="img" id="img" class="form-control-file">
           <label for="img">
             <br>
-            <p>We recommend using a high-quality file less than 20MB</p>
+            <>We recommend using a high-quality file less than 2upload
           </label> <br>
         </div>
-        <aside class="desccription">
+        <aside class="description">
 
           <div class="form-group">
-            <input type="text" class="form-control" name="caption" id="caption" placeholder="Add a title"
+            <input type="text" class="form-upload" name="caption" id="caption" placeholder="Add a title"
               value="<?= htmlspecialchars($existingCaption) ?>">
-          </div> <br>
+          </div>
           <div class="form-group">
-            <input type="text" class="form-control" name="description" id="description"
+            <input type="text" class="form-upload" name="description" id="description"
               placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
-          </div> <br>
+          </div>
           <div class="form-group">
-            <select name="category" id="category" class="form-control" required>
+            <select name="category" id="category" class="form-upload" required>
               <option value="" selected disabled>Select a category</option>
               <?php
               include "database.php";
@@ -251,9 +251,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }
               ?>
             </select>
-          </div> <br>
+          </div>
           <div class="form-group">
-            <select name="album" id="album" class="form-control">
+            <select name="album" id="album" class="form-upload">
               <!-- Populate album options -->
               <option value="" selected disabled>Select a Album</option>
               <option value="NULL">No Album</option>
@@ -277,7 +277,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
-            <input type="submit" value="Update" name="update-img" class="btn btn-primary mt-5">
+            <input type="submit" value="Update" name="update-img" class="btn btn-primary mt-2">
           </div>
         </aside>
       </div>
