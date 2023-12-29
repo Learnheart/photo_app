@@ -1,4 +1,5 @@
 #Dabase structure 
+
 -- Account table
 CREATE TABLE account (
   userId INT(11) PRIMARY KEY AUTO_INCREMENT,
@@ -25,6 +26,7 @@ CREATE TABLE category (
   cateName varchar(20) not null,
   date TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 )
+
 -- Photo table
 Create TABLE photo (
   photoId int(11) PRIMARY KEY AUTO_INCREMENT,
