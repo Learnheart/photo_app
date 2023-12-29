@@ -82,7 +82,7 @@ if (isset($_SESSION["user"])) {
             if ($_SESSION["role"] == "User") {
               header("Location: homepage.php");
             } elseif ($_SESSION["role"] == "Admin") {
-              header("Location: admin-site.php");
+              header("Location: admin/admin-site.php");
             } else {
               // Handle other roles as needed
               echo "<div class='alert alert-danger'>Invalid role</div>";

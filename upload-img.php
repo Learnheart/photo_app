@@ -220,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="file" name="img" id="img" class="form-control-file">
           <label for="img">
             <br>
-            <p>We recommend using a high-quality file less than 20MB</p>
+            <>We recommend using a high-quality file less than 2upload
           </label> <br>
         </div>
         <aside class="description">
@@ -277,7 +277,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
-            <input type="submit" value="Update" name="update-img" class="btn btn-primary mt-5">
+            <input type="submit" value="Update" name="update-img" class="btn btn-primary mt-2">
           </div>
         </aside>
       </div>

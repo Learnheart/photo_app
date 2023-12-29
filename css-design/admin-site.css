@@ -1,0 +1,246 @@
+@import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: fit-content;
+  font-family: "Akaya Kanadaka", cursive;
+}
+
+.side-bar {
+  height: 100vh;
+  width: 100px;
+  background-color: #333;
+  position: fixed;
+  top: 0;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.icon {
+  color: rgb(208, 212, 214);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 0.7em 0;
+  float: left;
+  position: relative;
+  list-style: none;
+}
+.ti-home:hover,
+.ti-user:hover,
+.ti-bookmark:hover,
+.ti-settings:hover {
+  font-weight: bold;
+  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
+}
+li {
+  margin-bottom: 25px;
+  font-size: 25px;
+}
+li > a {
+  color: rgb(208, 212, 214);
+  text-decoration: none;
+}
+.logo-container {
+  width: 50px;
+  height: 53px;
+  margin-top: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.logo {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  border: 1px solid #fff;
+  background-color: #333;
+}
+
+/* Search key */
+.input-group {
+  border-radius: 15px;
+  border: 1px solid #e4e9f2;
+  margin-left: 20px;
+}
+.input-group-text {
+  border-radius: 15px;
+  font-size: 20px;
+  background-color: white;
+}
+.form-control {
+  border-radius: 15px;
+  color: #8f9bb3;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 25px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.d-flex {
+  width: 770px;
+}
+
+h2 {
+  margin-left: 68px;
+  width: auto;
+  height: 38px;
+  flex-shrink: 0;
+
+  color: #000;
+  font-family: "Akaya Kanadaka", cursive;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0.2px;
+}
+.hr-nav {
+  width: 1200px;
+  margin-left: 40px;
+  margin-top: 10px;
+}
+.hr-sidebar {
+  width: 35px;
+  margin-bottom: 30px;
+}
+
+/* Create category button */
+.create-icon {
+  border: 1px black solid;
+  border-radius: 50%;
+  background-color: transparent;
+  width: 45px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: -240px;
+}
+#user-list,
+#category-control {
+  margin: 0 0px 10px 80px;
+}
+
+/* User information css */
+.table th {
+  color: #202631;
+  font-size: 30px;
+}
+.table td {
+  font-size: 20px;
+}
+.name-list img {
+  border: 1px solid transparent;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: 20px;
+  margin-left: 40px;
+}
+
+/* Create category form */
+#create-cate,
+#update-cate {
+  display: block;
+  width: 450px;
+  height: 332px;
+  flex-shrink: 0;
+  background-color: #d9d9d9;
+  display: flex;
+  position: absolute;
+  padding: 25px 30px 25px 30px;
+  justify-content: center;
+  z-index: 2;
+  right: 500px;
+  top: 200px;
+  text-align: center;
+}
+#create-cate label,
+#update-cate label {
+  color: #202631;
+  text-align: center;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+#create-cate .form-control,
+#update-cate .form-control {
+  width: 373px;
+  height: 52px;
+  border-radius: 20px;
+  background: #efefef;
+}
+#create-cate .btn,
+#update-cate .btn {
+  width: 249px;
+  height: 54px;
+  border-radius: 15px;
+  background: #136fb8;
+  color: #fff;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 400;
+}
+#create-cate .btn-close,
+#update-cate .btn-close {
+  float: right;
+}
+
+/* Category Activity dropdown */
+.dropdown {
+  width: 0;
+}
+.dropdown-menu {
+  text-align: center;
+  border-radius: 15px;
+  background: #d9d9d9;
+  font-size: 20px !important;
+}
+.dropdown-menu li {
+  color: #000;
+  font-weight: 400;
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  margin: 0;
+}
+.dropdown-menu li:hover {
+  color: #979797;
+}
+.dropdown-menu .btn {
+  font-size: 20px;
+}
+/* popover button */
+.popover {
+  max-width: 300px; /* Adjust the maximum width as needed */
+}
+
+.popover-header {
+  background-color: #ffc107; /* Change the background color */
+  color: #212529; /* Change the text color */
+  border-bottom: 1px solid #dee2e6; /* Add a border at the bottom */
+  cursor: pointer;
+}
+.popover-header:hover {
+  background-color: #f9da87;
+}
+
+.popover-body {
+  padding: 10px;
+}
+.popover:before {
+  border-bottom-color: #ffc107; /* Match the header background color */
+}
+.hidden {
+  display: none !important;
+}
