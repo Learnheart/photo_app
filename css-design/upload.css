@@ -77,27 +77,20 @@ hr {
 /* Other styles... */
 
 /* Search key */
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  width: 1500px;
-}
-
 .input-group {
   border-radius: 15px;
-  border: 1px solid #a4a7ac;
+  border: 1px solid #e4e9f2;
   margin-left: 20px;
-  font-size: 20px;
 }
 .input-group-text {
   border-radius: 15px;
   font-size: 20px;
   background-color: white;
 }
-.form-upload {
+.form-control {
   border-radius: 15px;
   color: #8f9bb3;
-  font-family: Akaya Kanadaka;
+  font-family: "Akaya Kanadaka", cursive;
   font-size: 25px;
   font-style: normal;
   font-weight: 400;
@@ -118,7 +111,7 @@ hr {
 }
 
 h2 {
-  margin-left: 68px;
+  margin-left: 50px;
   width: auto;
   height: 38px;
   flex-shrink: 0;
@@ -142,11 +135,10 @@ h2 {
   justify-content: center;
   border: 1px solid #e4e9f2;
   border-radius: 50%;
-  left: 1115px;
   cursor: pointer;
 }
 .bell-icon {
-  margin-left: 50px;
+  margin-left: 30px;
   margin-right: 20px;
 }
 .bell-icon:hover {
@@ -190,7 +182,7 @@ hr {
   box-sizing: border-box;
 }
 .hr-nav {
-  width: 1250px;
+  width: 1150px;
   margin-left: 40px;
   margin-top: -10px;
 }
