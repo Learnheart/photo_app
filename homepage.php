@@ -29,7 +29,7 @@ $sql = "SELECT p.*, a.firstName, a.lastName, a.avatar, p.userId FROM photo p JOI
 
 // Add the search condition if a keyword is provided
 if (!empty($searchKeyword)) {
-  $sql .= " WHERE p.caption LIKE '%$searchKeyword%' OR p.description LIKE '%$searchKeyword%'";
+  $sql .= " WHERE p.caption LIKE '%$searchKeyword%' OR p.description LIKE '%$searchKeyword%' OR a.firstName LIKE '%$searchKeyword%' OR a.lastName LIKE '%$searchKeyword%'";
 }
 
 // Add the category condition if a category is provided
