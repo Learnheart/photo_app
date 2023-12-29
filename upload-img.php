@@ -232,7 +232,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <div class="form-group">
             <input type="text" class="form-upload" name="description" id="description"
               placeholder="Add a detailed description" value="<?= htmlspecialchars($existingDescription) ?>">
-          </div>
+          </div> 
           <div class="form-group">
             <select name="category" id="category" class="form-upload" required>
               <option value="" selected disabled>Select a category</option>
@@ -251,7 +251,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
               }
               ?>
             </select>
-          </div>
+          </div> 
           <div class="form-group">
             <select name="album" id="album" class="form-upload">
               <!-- Populate album options -->
