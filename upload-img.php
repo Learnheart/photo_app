@@ -108,6 +108,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/upload.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
@@ -129,7 +130,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       </li>
       <li class="ti-bookmark"></li>
       <hr class="hr-sidebar">
-      <li class="ti-settings"></li>
+      <li>
+        <a tabindex="0" class="ti-settings" role="button" data-bs-toggle="popover" data-bs-trigger="focus"
+          data-bs-title="Logout" data-bs-content=""></a>
+      </li>
     </ul>
   </div>
   <!-- Webpage content -->
@@ -246,14 +250,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </aside>
       </div>
     </form>
-
-    <!-- </main> -->
-
-    <div class="container">
-      <a href="./homepage.php" class="btn btn-warning">Back</a>
-    </div>
   </div>
+  <script>
+  $(function() {
+    $('[data-bs-toggle="popover"]').popover();
+  });
 
+  // Handle click on popover title
+  $(document).on('click', '.popover-header', function() {
+    window.location.href = 'logout.php';
+  });
+  </script>
 </body>
 
 </html>
