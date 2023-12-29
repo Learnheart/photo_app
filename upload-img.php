@@ -220,7 +220,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           <input type="file" name="img" id="img" class="form-control-file">
           <label for="img">
             <br>
-            <>We recommend using a high-quality file less than 2upload
+            <p>We recommend using a high-quality file less than 20MB</p>
           </label> <br>
         </div>
         <aside class="description">
@@ -277,7 +277,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             </select>
           </div>
           <div class="form-group">
-            <input type="submit" value="Update" name="update-img" class="btn btn-primary mt-2">
+            <input type="submit" value="Post" name="update-img" class="btn btn-primary mt-5">
           </div>
         </aside>
       </div>
@@ -285,7 +285,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     <!-- Form for deleting image -->
     <form action="edit-img.php?edit=<?= $editPhotoId ?>" method="post" id="delete" class="container">
-      <div class="form-group">
+      <div class="form-group">  
         <input type="submit" value="Delete" name="delete-img" class="btn btn-danger mt-3 mb-5">
       </div>
     </form>
