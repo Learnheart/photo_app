@@ -1,9 +1,10 @@
 /* Include the font from Google Fonts */
 @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+
 #homepage {
   margin: 0 24px 0 124px;
+  width: 1250px;
 }
-
 /* Side bar design */
 #side-bar {
   height: 100vh;
@@ -54,12 +55,13 @@
   font-size: 25px; /* Change this to adjust the font size */
   text-decoration: none;
 }
+
 .ti-home:hover,
 .ti-user:hover,
 .ti-bookmark:hover,
 .ti-settings:hover {
   font-weight: bold;
-  color: white; /* Đổi màu chữ khi hover (tuỳ chọn) */
+  color: white;
 }
 li {
   margin-bottom: 25px;
@@ -67,8 +69,9 @@ li {
 }
 .hr-nav {
   width: 1150px;
-  margin-left: 50px;
-  margin-top: 10px;
+  margin-left: 40px;
+  margin-top: 0px;
+
 }
 .hr-sidebar {
   width: 35px;
@@ -159,6 +162,7 @@ h2 {
 
 /* Category bar */
 .navbar {
+  padding:20px;
   display: flex;
   justify-content: space-between;
   width: fit-content;
@@ -190,7 +194,9 @@ h2 {
 #album-img {
   max-width: 60%;
   display: inline-block;
+  margin-bottom: 30px;
 }
+
 .img-col .img-fluid,
 #album-img .add-album {
   border: transparent 1px solid;
@@ -209,6 +215,8 @@ h2 {
   border-radius: 50%;
   width: 200px;
   height: 200px;
+  margin-left: 70px;
+
 }
 #user-info,
 #create-album {
@@ -217,18 +225,21 @@ h2 {
   font-family: "Akaya Kanadaka", cursive;
   position: relative;
 }
+.ti-pencil{
+  margin-left: 2.5px;
+}
 #user-info .edit-icon {
-  color: #2e4b9c;
+  color: black;
   position: absolute;
   z-index: 2;
   top: 160px;
-  right: 122px;
-  font-size: 24px;
+  right: 115px;
+  font-size: 20px;
   background-color: #fff;
-  border: 1px solid #2e4b9c;
+  border: 1px solid black;
   border-radius: 20px;
-  width: 36px;
-  height: 36px;
+  width: 28px;
+  height: 28px;
   text-decoration: none;
 }
 #user-info .edit-icon:hover {
@@ -255,10 +266,14 @@ h2 {
   background-color: #eee; /* Optional background color for visibility */
 }
 
+.post-album{
+  margin-left: 50px;
+}
 .post-album li {
   list-style-type: none;
   display: inline-block;
-  margin: 0 30px;
+  margin-right: 20px;
+  
 }
 .post-album button {
   background-color: transparent;

@@ -180,6 +180,7 @@ hr {
   justify-content: center;
   width: 30%;
   box-sizing: border-box;
+  margin-left:50px;
 }
 .hr-nav {
   width: 1150px;
@@ -203,7 +204,7 @@ hr {
   padding-left: 20px; /* Thêm padding để cách xa viền ô */
   justify-content: center;
   margin-bottom: 30px;
-  margin-right: 150px;
+  margin-left:-50px;
   cursor: pointer;
   transition: border-color 0.3s ease, background 0.3s ease; /* Hiệu ứng chuyển động màu viền và nền */
 }
@@ -236,9 +237,10 @@ hr {
 .file {
   border-radius: 20px;
   border: 1px solid transparent;
-  width: 700px;
+  width: 650px;
   height: 500px;
-  margin-left: 50px;
+  margin-left: -10px;
+  margin-right:20px;
   text-align: center;
   background: #efefef;
   color: #979797;

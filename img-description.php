@@ -85,6 +85,7 @@ if (mysqli_num_rows($res) > 0) {
         </a>
       </div>
     </nav>
+  
     <!-- Categories -->
     <ul class="nav">
       <?php
@@ -136,8 +137,13 @@ if (mysqli_num_rows($res) > 0) {
             <li class="ava">
               <img src="avatar/<?= $data['avatar'] ?>" class="img-fluid" alt="User Avatar">
             </li>
-            <li class="name">
+            <li class="name-date">
+              <div class="name">
               <?= $data['firstName'] . ' ' . $data['lastName']; ?>
+              </div>
+              <div class="date">
+              <?= $data['updateDate']; ?>
+              </div>
             </li>
             <li class="edit-info">
               <?php
@@ -160,9 +166,7 @@ if (mysqli_num_rows($res) > 0) {
               <i class="ti-heart"></i>
             </li>
             <li class="img-mark"><i class="ti-bookmark"></i></li> <br>
-            <li class="date">
-              <?= $data['updateDate']; ?>
-            </li>
+          
           </ul>
           <!-- caption -->
           <div class="img-context">
@@ -180,8 +184,9 @@ if (mysqli_num_rows($res) > 0) {
           </div>
         </div>
       </div>
+      <br>
       <aside>
-        <h2>Most related</h2>
+        <h3>Most related</h3>
         <div class="related-img">
           <?php
           // Fetch related images from the database
@@ -236,12 +241,7 @@ if (mysqli_num_rows($res) > 0) {
           ?>
         </div>
       </aside>
-
     </main>
-
-    <div class="back-btn">
-      <a href="./homepage.php">Back</a>
-    </div>
   </div>
 
   <script>
