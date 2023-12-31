@@ -135,10 +135,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </ul>
   </div>
   <div id="edit-profile" class="container">
-    <header>
-      <h1>Edit Profile</h1>
-      <hr>
-    </header>
+    <h1 class="mt-5">Edit Profile</h1>
+    <hr>
     <main>
       <?php
       if (isset($_POST["submit"])) { //only works when user click submit button

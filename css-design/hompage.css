@@ -3,6 +3,7 @@
 
 #homepage {
   margin: 0 24px 0 124px;
+  width: 1250px;
 }
 /* Side bar design */
 #side-bar {
@@ -201,6 +202,7 @@ h2 {
 .alb {
   border-radius: 20px;
   font-family: "Akaya Kanadaka", cursive;
+  margin-left: -10px;
 }
 .alb img {
   border: 1px solid transparent;
@@ -209,16 +211,13 @@ h2 {
   flex-shrink: 0;
   object-fit: cover;
   border-radius: 20px;
-  margin-left: 40px;
 }
 
 .alb-user li {
   display: inline-block;
   font-family: "Akaya Kanadaka", cursive;
 }
-.ava {
-  margin-left: 25px;
-}
+
 .name {
   margin-left: 5px;
   margin-right: 90px;
