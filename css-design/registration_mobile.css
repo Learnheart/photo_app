@@ -9,6 +9,9 @@
         flex-direction: column; /* Xếp theo chiều dọc */
         align-content: center; /* Canh giữa theo chiều ngang */
       }
+      #side-bar {
+        display: none; /* Ẩn side-bar khi ở chế độ mobile */
+       }
     .navbar {
         display: none;
     }

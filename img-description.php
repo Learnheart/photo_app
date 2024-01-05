@@ -30,6 +30,7 @@ if (mysqli_num_rows($res) > 0) {
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./css-design/img-description.css">
+  <link rel="stylesheet" href="./css-design/img-des_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -184,7 +185,6 @@ if (mysqli_num_rows($res) > 0) {
           </div>
         </div>
       </div>
-      <br>
       <aside>
         <h3>Most related</h3>
         <div class="related-img">

@@ -216,7 +216,7 @@ hr {
 .img-fluid {
   flex-shrink: 0;
   width: 650px;
-  height: 400px;
+  height: auto;
   border-radius: 20px;
   margin-left: 40px;
 }
@@ -308,7 +308,7 @@ hr {
   font-weight: bold;
   color: #555;
 }
-.ti-bookmark {
+.alb-user .img-mark .ti-bookmark {
   margin-top:-10px;
   width: 44px;
   height: 20px;
@@ -380,10 +380,11 @@ h3 {
   height: 2px;
   margin-left: 15px;
 }
+/* comment */
 iframe {
   margin-left: 40px;
   width: 580px;
-  height: 44px;
+  max-height: 120px;
   background-color: #777171; 
 }
 

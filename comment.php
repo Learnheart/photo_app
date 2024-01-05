@@ -124,8 +124,10 @@ $cmtList = showCmt($conn, $photoId);
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
   </script>
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
   <link rel="stylesheet" href="./css-design/img-description.css">
@@ -135,24 +137,21 @@ $cmtList = showCmt($conn, $photoId);
   <form action="comment.php" method="post">
     <input type="hidden" name="userId" value="<?= $userId ?>">
     <input type="hidden" name="photoId" value="<?= $photoId ?>">
-    <textarea name="content" id="" cols="30" rows="3" placeholder="Comments"></textarea><br>
+    <textarea name="content" id="" cols="50" rows="2" placeholder="Comments"></textarea>
     <input type="submit" value="Send" name="send" class="btn btn-secondary">
   </form>
-  <hr>
   <div class="user-cmt">
     <?php
     foreach ($cmtList as $cmt) {
       $avatarPath = $cmt['avatar'];
       echo '<img src="avatar/' . $avatarPath . '" class="img-fluid" alt="User Avatar">';
-      echo "<strong>{$cmt['firstName']} {$cmt['lastName']}</strong>";
+      echo "<strong>{$cmt['firstName']} {$cmt['lastName']}</strong> {$cmt['content']}";
 
       // Check if the comment belongs to the current user
       if ($cmt['userId'] == $userId) {
         echo " <button onclick='updateCmt()'><i class='ti-pencil'></i></button>";
       }
-
-      echo "<br>";
-      echo "<div class='cmt-context'>{$cmt['content']}<br> <br></div>";
+      // echo "<div class='cmt-context'>{$cmt['content']}<br> <br></div>";
       // Form update
       echo "<form action='comment.php' id='updateDiv' method='post' class='hidden'>";
       echo "<input type='hidden' name='cmtId' value='{$cmt['cmtID']}'>";
@@ -171,22 +170,22 @@ $cmtList = showCmt($conn, $photoId);
 
 
   <script>
-    var display = 0;
+  var display = 0;
 
-    function updateCmt() {
-      var updatediv = document.getElementById('updateDiv');
-      var deletediv = document.getElementById('deleteDiv');
-      if (display == 1) {
-        updatediv.classList.remove('hidden');
-        deletediv.classList.remove('hidden');
-        display = 0;
-      } else {
-        updatediv.classList.add('hidden');
-        deletediv.classList.add('hidden');
-        display = 1
-      }
-
+  function updateCmt() {
+    var updatediv = document.getElementById('updateDiv');
+    var deletediv = document.getElementById('deleteDiv');
+    if (display == 1) {
+      updatediv.classList.remove('hidden');
+      deletediv.classList.remove('hidden');
+      display = 0;
+    } else {
+      updatediv.classList.add('hidden');
+      deletediv.classList.add('hidden');
+      display = 1
     }
+
+  }
   </script>
 </body>
 
