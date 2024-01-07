@@ -109,6 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/registration.css">
+  <link rel="stylesheet" href="./css-design/registration_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 

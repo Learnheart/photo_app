@@ -3,7 +3,7 @@
 
 #homepage {
   margin: 0 24px 0 124px;
-  width: 1250px;
+  min-width: 1250px;
 }
 /* Side bar design */
 #side-bar {
@@ -115,7 +115,7 @@ li {
 }
 
 h2 {
-  margin-left: 50px;
+  margin-left: 40px;
   width: auto;
   height: 38px;
   flex-shrink: 0;
@@ -202,7 +202,6 @@ h2 {
 .alb {
   border-radius: 20px;
   font-family: "Akaya Kanadaka", cursive;
-  margin-left: -10px;
 }
 .alb img {
   border: 1px solid transparent;

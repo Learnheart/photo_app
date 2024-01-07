@@ -110,6 +110,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
   </script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
   <link rel="stylesheet" href="./css-design/upload.css">
+  <link rel="stylesheet" href="./css-design/upload_mobile.css">
   <link rel="stylesheet" href="./fonts/themify-icons/themify-icons.css">
 </head>
 
@@ -172,7 +173,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <!-- File frame -->
     <!-- <main id="upload"> -->
     <!-- form for upload img -->
-
+    
     <form action="upload-img.php" method="post" id="upload" enctype="multipart/form-data" class="container">
       <div class="upload-container">
         <!-- File div -->

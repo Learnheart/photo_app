@@ -1,0 +1,355 @@
+@media (max-width: 768px) {
+  
+    /* Import font từ Google Fonts (Nếu bạn muốn giữ nguyên font này cho màn hình di động) */
+    @import url("https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap");
+  
+    /* Body */
+    body {
+      margin: 0;
+      padding: 0;
+      max-width: none;
+      height: fit-content;
+    }
+    #description{
+      margin-left: 0px;
+    }
+    /* Side bar */
+    #side-bar {
+        display: none; /* Ẩn side-bar khi ở chế độ mobile */
+      }
+    /* Search key */
+    .input-group {
+    border-radius: 15px;
+    border: 1px solid #e4e9f2;
+    }
+    .input-group-text{
+    border-radius: 15px;
+    font-size: 12px;
+    background-color: white;
+    }
+    .form-control {
+    border-radius: 15px;
+    color: #8f9bb3;
+    font-family: Akaya Kanadaka;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    }
+    .d-flex {
+    max-width:600px;
+    width: fit-content;
+    }
+    /* User info */
+    .user-info {
+    display: inline;
+    text-align: center;
+    }
+    .container-fluid {
+    justify-content: unset !important;
+    align-items: center;
+    margin: 20px;
+    }
+
+    h2 {
+    margin-left: 30px;
+    width: auto;
+    height:20px;
+    flex-shrink: 0;
+
+    color: #000;
+    font-family: "Akaya Kanadaka", cursive;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: 0.2px;
+    }
+    .bell-icon,
+    .export-icon {
+    font-size: 15px;
+    color: #2e4b9c;
+    display: flex;
+    width: 40px;
+    height: 42px;
+    top: 43px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #e4e9f2;
+    border-radius: 50%;
+    left: 1115px;
+    cursor: pointer;
+    }
+    .bell-icon{
+    margin-left: 30px;
+    margin-right: 20px;
+    }
+
+
+    .export-icon {
+    background-color: #2e4b9c;
+    color: white;
+    }
+    
+/* Category bar */
+/* Category bar */
+.nav {
+  display: flex;
+  flex-wrap: wrap; /* Allow items to wrap to the next line */
+  justify-content: space-between;
+  max-width: 650px;
+  margin-left: 50px;
+  margin-top: -10px;
+}
+
+.nav-item {
+  display: flex; /* Sử dụng flexbox */
+  justify-content: center; /* Canh giữa theo chiều ngang */
+  align-items: center; /* Canh giữa theo chiều dọc */
+  font-family: Akaya Kanadaka;
+  width: 100px;
+  height: 38px;
+  font-size: 20px;
+  text-align: center;
+  flex-shrink: 0;
+  margin-right: 10px; /* Adjust the margin as needed */
+  margin-bottom: 10px; /* Add margin between items in the next line */
+  border-radius: 25px;
+  border: 1px solid #e4e9f2;
+  background: #fff;
+  cursor: pointer;
+}
+
+.nav-item:hover {
+  background-color: #e4e9f2;
+}
+
+hr{
+  display:none;
+}
+/* Add this to your existing CSS or create a new CSS file */
+.nav-link {
+  color: #888; /* Change this to the gray color you prefer */
+}
+
+.nav-link:hover {
+  color: #555; /* Change this to the hover color you prefer */
+}
+
+/* Page content */
+.page-content{
+    min-height: 700px;
+  }
+  .img-display {
+    display: block;
+    width: 90%;
+    width: 700px;
+    height:900px;
+    border-radius: 20px, 20px, 0px, 0px;
+  }
+  .img-fluid {
+    flex-shrink: 0;
+    width: 650px;
+    height: auto;
+    border-radius: 20px;
+    margin-left: 40px;
+  }
+  
+  .img-des {
+    margin-left: 40px;
+    padding-bottom: 40px;
+    margin-top: -50px;
+    width: 650px;
+    background-color: #D9D9D952;
+    border-radius: 20px;
+    min-height: 300px;
+  
+  }
+  
+  .alb {
+    border-radius: 20px;
+    font-family: "Akaya Kanadaka", cursive;
+  }
+  
+  .alb-user {
+    padding-top: 40px;
+    margin-left: -40px;
+    display: flex;
+    align-items: center; /* Canh giữa theo chiều dọc */
+    margin-bottom: 0px;
+    
+  }
+  
+  .alb-user .ava,
+  .alb-user .name-date,
+  .alb-user .like,
+  .alb-user .img-mark {
+    display: inline-block;
+    vertical-align: middle; /* Canh giữa theo chiều dọc */
+    margin-bottom: 0px;
+  }
+  
+  .alb-user li {
+    display: inline-block;
+    font-family: "Akaya Kanadaka", cursive;
+  }
+  .alb-user a {
+    text-decoration: none;
+  }
+  .ava {
+    width: 51.76px;
+    height: 63px;
+  }
+  .name-date{
+    margin-left: 40px;
+    margin-top:-10px;
+    margin-right: 20px;
+  }
+  
+  .name {
+    font-size: 28px;
+  }
+  
+  .date {
+    font-size: 10px;
+  }
+  
+  .name,
+  .date {
+    display: block; /* Hiển thị "name" và "date" trên các dòng riêng biệt */
+  }
+  .ti-pencil {
+    margin-top:-10px;
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+  }
+  .like {
+    border: #fff;
+    background-color: #fff;
+    color: #888;
+    margin-left: 270px;
+    margin-right: 40px;
+    background-color: transparent;
+  }
+  .ti-heart {
+    margin-top:-10px;
+    width: 50.63px;
+    height: 37.21px;
+    color: #888;
+  }
+  .ti-heart:hover {
+    font-weight: bold;
+    color: #555;
+  }
+  .alb-user .img-mark .ti-bookmark {
+    margin-top:-10px;
+    width: 44px;
+    height: 20px;
+    padding: 2px, 0px, 4px, 26.57px;
+    color: #888;
+  }
+  .alb-user .img-mark .ti-bookmark:hover {
+    font-weight: bold;
+    color: #555;
+  }
+  .alb-user > li > .img-fluid,
+  .user-cmt > .img-fluid {
+    width: 40px;
+    height: 38px;
+    border-radius: 50%;
+  }
+  
+  
+  /* Aside */
+  aside {
+    display: block;
+    width: 95%;
+    margin-left: 50px;
+  }
+  .row{
+    width: 780px;
+  }
+  h3 {
+    margin-top:10px;
+    width: auto;
+    flex-shrink: 0;
+    color: #000;
+    font-family: "Akaya Kanadaka", cursive;
+    font-size: 28px;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: 0.2px;
+  }
+  .related-img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  aside .img-col{
+    margin-left: 20px;
+    max-width: 300px ;
+    height: 400px ;
+    margin-bottom: 30px;
+  }
+  
+  .related-img .img-fluid {
+    width: 250px !important;
+    height: 400px !important;
+    border-radius: 20px; /* Adjust the border-radius if needed */
+    object-fit: cover; /* Maintain the aspect ratio of images */
+    margin-left: 0px;
+  }
+  
+  .hidden {
+    display: none;
+  }
+  .user-cmt button {
+    border: none;
+    background-color: transparent;
+  }
+  .img-context{
+    margin-left: 40px;
+  }
+  .caption {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  .img-descrip {
+    font-size: 14px;
+  }
+  .hr-img {
+    width: 610px;
+    height: 2px;
+    margin-left: 15px;
+  }
+  /* comment */
+  iframe {
+    margin-left: 40px;
+    width: 580px;
+    max-height: 120px;
+    background-color: #777171; 
+  }
+  
+  /* popover button */
+  .popover {
+    max-width: 300px; /* Adjust the maximum width as needed */
+  }
+  
+  .popover-header {
+    background-color: #ffc107; /* Change the background color */
+    color: #212529; /* Change the text color */
+    border-bottom: 1px solid #dee2e6; /* Add a border at the bottom */
+    cursor: pointer;
+  }
+  .popover-header:hover {
+    background-color: #f9da87;
+  }
+  
+  .popover-body {
+    padding: 10px;
+  }
+  .popover:before {
+    border-bottom-color: #ffc107; /* Match the header background color */
+  }
+}  
